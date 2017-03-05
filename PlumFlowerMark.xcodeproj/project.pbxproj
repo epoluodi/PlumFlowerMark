@@ -9,23 +9,66 @@
 /* Begin PBXBuildFile section */
 		5C7950921E6A8F70007D0D78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7950911E6A8F70007D0D78 /* main.m */; };
 		5C7950951E6A8F70007D0D78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7950941E6A8F70007D0D78 /* AppDelegate.m */; };
-		5C7950981E6A8F70007D0D78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7950971E6A8F70007D0D78 /* ViewController.m */; };
 		5C79509B1E6A8F70007D0D78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7950991E6A8F70007D0D78 /* Main.storyboard */; };
 		5C79509D1E6A8F70007D0D78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C79509C1E6A8F70007D0D78 /* Assets.xcassets */; };
 		5C7950A01E6A8F70007D0D78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C79509E1E6A8F70007D0D78 /* LaunchScreen.storyboard */; };
+		5CE51DA91E6C36E700FFAF2E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DA81E6C36E700FFAF2E /* RootViewController.m */; };
+		5CE51DAC1E6C370200FFAF2E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DAB1E6C370200FFAF2E /* MainViewController.m */; };
+		5CE51DAF1E6C373500FFAF2E /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DAE1E6C373500FFAF2E /* ListViewController.m */; };
+		5CE51DB21E6C373F00FFAF2E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DB11E6C373F00FFAF2E /* MapViewController.m */; };
+		5CE51DB61E6C56C800FFAF2E /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE51DB51E6C56C800FFAF2E /* Common.framework */; };
+		5CE51DB81E6C574400FFAF2E /* Common.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5CE51DB51E6C56C800FFAF2E /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5CE51DBB1E6C5B3E00FFAF2E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DBA1E6C5B3E00FFAF2E /* BaseViewController.m */; };
+		5CE51DBE1E6C61ED00FFAF2E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CE51DC01E6C61ED00FFAF2E /* InfoPlist.strings */; };
+		5CE51DC41E6C624200FFAF2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CE51DC61E6C624200FFAF2E /* Localizable.strings */; };
+		5CE51DCC1E6C6E7600FFAF2E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DCB1E6C6E7600FFAF2E /* AboutViewController.m */; };
+		5CE51DCF1E6C6F2B00FFAF2E /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DCE1E6C6F2B00FFAF2E /* AddViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5CE51DB71E6C573D00FFAF2E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5CE51DB81E6C574400FFAF2E /* Common.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5C79508D1E6A8F70007D0D78 /* PlumFlowerMark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlumFlowerMark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7950911E6A8F70007D0D78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5C7950931E6A8F70007D0D78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5C7950941E6A8F70007D0D78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5C7950961E6A8F70007D0D78 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5C7950971E6A8F70007D0D78 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5C79509A1E6A8F70007D0D78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C79509C1E6A8F70007D0D78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C79509F1E6A8F70007D0D78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C7950A11E6A8F70007D0D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C7950A71E6A8F8F007D0D78 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		5C7950A81E6A8F8F007D0D78 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5CE51DA71E6C36E700FFAF2E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		5CE51DA81E6C36E700FFAF2E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		5CE51DAA1E6C370200FFAF2E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		5CE51DAB1E6C370200FFAF2E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		5CE51DAD1E6C373500FFAF2E /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		5CE51DAE1E6C373500FFAF2E /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		5CE51DB01E6C373F00FFAF2E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		5CE51DB11E6C373F00FFAF2E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		5CE51DB51E6C56C800FFAF2E /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		5CE51DB91E6C5B3E00FFAF2E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		5CE51DBA1E6C5B3E00FFAF2E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		5CE51DBF1E6C61ED00FFAF2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5CE51DC11E6C61F000FFAF2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5CE51DC51E6C624200FFAF2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5CE51DC71E6C624400FFAF2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5CE51DC81E6C685200FFAF2E /* Public.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
+		5CE51DCA1E6C6E7600FFAF2E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		5CE51DCB1E6C6E7600FFAF2E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		5CE51DCD1E6C6F2B00FFAF2E /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		5CE51DCE1E6C6F2B00FFAF2E /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE51DB61E6C56C800FFAF2E /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,15 +102,32 @@
 		5C79508F1E6A8F70007D0D78 /* PlumFlowerMark */ = {
 			isa = PBXGroup;
 			children = (
+				5CE51DC91E6C6DCA00FFAF2E /* db */,
+				5CE51DB41E6C55BA00FFAF2E /* lib */,
 				5C7950931E6A8F70007D0D78 /* AppDelegate.h */,
 				5C7950941E6A8F70007D0D78 /* AppDelegate.m */,
-				5C7950961E6A8F70007D0D78 /* ViewController.h */,
-				5C7950971E6A8F70007D0D78 /* ViewController.m */,
 				5C7950991E6A8F70007D0D78 /* Main.storyboard */,
 				5C79509C1E6A8F70007D0D78 /* Assets.xcassets */,
 				5C79509E1E6A8F70007D0D78 /* LaunchScreen.storyboard */,
 				5C7950A11E6A8F70007D0D78 /* Info.plist */,
 				5C7950901E6A8F70007D0D78 /* Supporting Files */,
+				5CE51DA71E6C36E700FFAF2E /* RootViewController.h */,
+				5CE51DA81E6C36E700FFAF2E /* RootViewController.m */,
+				5CE51DAA1E6C370200FFAF2E /* MainViewController.h */,
+				5CE51DAB1E6C370200FFAF2E /* MainViewController.m */,
+				5CE51DAD1E6C373500FFAF2E /* ListViewController.h */,
+				5CE51DAE1E6C373500FFAF2E /* ListViewController.m */,
+				5CE51DB01E6C373F00FFAF2E /* MapViewController.h */,
+				5CE51DB11E6C373F00FFAF2E /* MapViewController.m */,
+				5CE51DB91E6C5B3E00FFAF2E /* BaseViewController.h */,
+				5CE51DBA1E6C5B3E00FFAF2E /* BaseViewController.m */,
+				5CE51DC01E6C61ED00FFAF2E /* InfoPlist.strings */,
+				5CE51DC61E6C624200FFAF2E /* Localizable.strings */,
+				5CE51DC81E6C685200FFAF2E /* Public.h */,
+				5CE51DCA1E6C6E7600FFAF2E /* AboutViewController.h */,
+				5CE51DCB1E6C6E7600FFAF2E /* AboutViewController.m */,
+				5CE51DCD1E6C6F2B00FFAF2E /* AddViewController.h */,
+				5CE51DCE1E6C6F2B00FFAF2E /* AddViewController.m */,
 			);
 			path = PlumFlowerMark;
 			sourceTree = "<group>";
@@ -79,6 +140,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5CE51DB41E6C55BA00FFAF2E /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				5CE51DB51E6C56C800FFAF2E /* Common.framework */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		5CE51DC91E6C6DCA00FFAF2E /* db */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,6 +165,7 @@
 				5C7950891E6A8F70007D0D78 /* Sources */,
 				5C79508A1E6A8F70007D0D78 /* Frameworks */,
 				5C79508B1E6A8F70007D0D78 /* Resources */,
+				5CE51DB71E6C573D00FFAF2E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -138,7 +215,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE51DC41E6C624200FFAF2E /* Localizable.strings in Resources */,
 				5C7950A01E6A8F70007D0D78 /* LaunchScreen.storyboard in Resources */,
+				5CE51DBE1E6C61ED00FFAF2E /* InfoPlist.strings in Resources */,
 				5C79509D1E6A8F70007D0D78 /* Assets.xcassets in Resources */,
 				5C79509B1E6A8F70007D0D78 /* Main.storyboard in Resources */,
 			);
@@ -151,9 +230,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C7950981E6A8F70007D0D78 /* ViewController.m in Sources */,
+				5CE51DAF1E6C373500FFAF2E /* ListViewController.m in Sources */,
 				5C7950951E6A8F70007D0D78 /* AppDelegate.m in Sources */,
+				5CE51DCC1E6C6E7600FFAF2E /* AboutViewController.m in Sources */,
 				5C7950921E6A8F70007D0D78 /* main.m in Sources */,
+				5CE51DB21E6C373F00FFAF2E /* MapViewController.m in Sources */,
+				5CE51DA91E6C36E700FFAF2E /* RootViewController.m in Sources */,
+				5CE51DBB1E6C5B3E00FFAF2E /* BaseViewController.m in Sources */,
+				5CE51DAC1E6C370200FFAF2E /* MainViewController.m in Sources */,
+				5CE51DCF1E6C6F2B00FFAF2E /* AddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +249,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5C79509A1E6A8F70007D0D78 /* Base */,
+				5C7950A71E6A8F8F007D0D78 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -172,8 +258,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				5C79509F1E6A8F70007D0D78 /* Base */,
+				5C7950A81E6A8F8F007D0D78 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5CE51DC01E6C61ED00FFAF2E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CE51DBF1E6C61ED00FFAF2E /* zh-Hans */,
+				5CE51DC11E6C61F000FFAF2E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5CE51DC61E6C624200FFAF2E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CE51DC51E6C624200FFAF2E /* zh-Hans */,
+				5CE51DC71E6C624400FFAF2E /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -183,6 +288,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -230,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -272,7 +379,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RK2BTW6E76;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PlumFlowerMark/lib",
+				);
 				INFOPLIST_FILE = PlumFlowerMark/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yangxiaoguang.PlumFlowerMark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -284,7 +396,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RK2BTW6E76;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PlumFlowerMark/lib",
+				);
 				INFOPLIST_FILE = PlumFlowerMark/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yangxiaoguang.PlumFlowerMark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -310,6 +427,7 @@
 				5C7950A61E6A8F70007D0D78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

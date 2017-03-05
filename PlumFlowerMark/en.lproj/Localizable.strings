@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  PlumFlowerMark
+
+  Created by 杨晓光 on 2017/3/5.
+  Copyright © 2017年 杨晓光. All rights reserved.
+*/
+
+"Tab1Title"="Mark List";
+"Tab2Title"="Map";
+
+"BarItem1"="List";
+"BarItem2"="Map";
+
+"AboutTitle"="About Info";
+"AddTitle"="Add Mark";
