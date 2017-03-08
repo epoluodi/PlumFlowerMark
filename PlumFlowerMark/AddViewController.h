@@ -7,10 +7,18 @@
 //
 
 #import "BaseViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface AddViewController : BaseViewController
+{
+    BOOL _firstLocationUpdate;
+}
 
-
+@property (weak, nonatomic) IBOutlet GMSMapView *mapview;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navtitle;
+@property (weak, nonatomic) IBOutlet UITableView *table;
+
+
+
 
 @end
