@@ -20,7 +20,7 @@
 @interface AddViewController ()
 {
  
-    UIBarButtonItem *btn1,*btn2;
+    UIBarButtonItem *btn1,*btn2,*btn3;
 }
 @end
 
@@ -38,10 +38,10 @@
     table.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 
-    
-    btn1 = [[UIBarButtonItem alloc] initWithTitle:@"123" style:UIBarButtonItemStylePlain target:nil action:nil];
-    btn2 = [[UIBarButtonItem alloc] initWithTitle:@"123" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [navtitle setRightBarButtonItems:@[btn1,btn2]];
+    btn1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnsave"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    btn2 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btncamera"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    btn3 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnrecord"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    [navtitle setRightBarButtonItems:@[btn1,btn2,btn3]];
     
     mapview.settings.compassButton = YES;
     mapview.settings.myLocationButton = YES;

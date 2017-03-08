@@ -8,7 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum : NSUInteger {
+    GOOLEMAP,
+    GAODEMAP,
+
+} MAPEnum;
+
 @interface CommonApi : NSObject
 
-+(NSString*)getCarrierName;
+
++(void)getCarrierName;
++(MAPEnum)getMapEnum;
 @end

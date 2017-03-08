@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "CommonApi.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +20,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
+    [CommonApi getCarrierName];
+    switch ([CommonApi getMapEnum]) {
+        case GOOLEMAP:
+            [GMSServices provideAPIKey:@"AIzaSyB_HOkwefSJGtkxinqkKdAQc_hjAQDc-Ts"];//key
+            [GMSServices sharedServices];
+            break;
+        case GAODEMAP:
+            
+            break;
+
+    }
+
     [GMSServices provideAPIKey:@"AIzaSyB_HOkwefSJGtkxinqkKdAQc_hjAQDc-Ts"];//key
     [GMSServices sharedServices];
     return YES;

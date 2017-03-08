@@ -10,14 +10,29 @@
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 
+
+static MAPEnum _mapenum;
 @implementation CommonApi
 
+
++(MAPEnum)getMapEnum
+{
+    return _mapenum;
+}
 //返回国家代码
-+(NSString*)getCarrierName
++(void)getCarrierName
 {
     CTTelephonyNetworkInfo *ctinfo = [[CTTelephonyNetworkInfo alloc] init];
     CTCarrier *ctcarrier = [ctinfo subscriberCellularProvider];
     NSLog(@"carrierName:%@",ctcarrier.carrierName);
-    return ctcarrier.isoCountryCode;
+    if ([ctcarrier.isoCountryCode isEqualToString:@"cn"])
+    {
+        _mapenum = GAODEMAP;
+    }
+    else
+    {
+        _mapenum=GOOLEMAP;
+    }
+    return ;
 }
 @end
