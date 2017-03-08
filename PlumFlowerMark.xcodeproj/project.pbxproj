@@ -12,6 +12,7 @@
 		5C79509B1E6A8F70007D0D78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7950991E6A8F70007D0D78 /* Main.storyboard */; };
 		5C79509D1E6A8F70007D0D78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C79509C1E6A8F70007D0D78 /* Assets.xcassets */; };
 		5C7950A01E6A8F70007D0D78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C79509E1E6A8F70007D0D78 /* LaunchScreen.storyboard */; };
+		5CB51ACD1E70380B005D3805 /* CommonApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB51ACC1E70380B005D3805 /* CommonApi.m */; };
 		5CE51DA91E6C36E700FFAF2E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DA81E6C36E700FFAF2E /* RootViewController.m */; };
 		5CE51DAC1E6C370200FFAF2E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DAB1E6C370200FFAF2E /* MainViewController.m */; };
 		5CE51DAF1E6C373500FFAF2E /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DAE1E6C373500FFAF2E /* ListViewController.m */; };
@@ -69,6 +70,8 @@
 		5C7950A11E6A8F70007D0D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C7950A71E6A8F8F007D0D78 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5C7950A81E6A8F8F007D0D78 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5CB51ACB1E70380B005D3805 /* CommonApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonApi.h; sourceTree = "<group>"; };
+		5CB51ACC1E70380B005D3805 /* CommonApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonApi.m; sourceTree = "<group>"; };
 		5CE51DA71E6C36E700FFAF2E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5CE51DA81E6C36E700FFAF2E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		5CE51DAA1E6C370200FFAF2E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 		5C79508F1E6A8F70007D0D78 /* PlumFlowerMark */ = {
 			isa = PBXGroup;
 			children = (
+				5CB51ACB1E70380B005D3805 /* CommonApi.h */,
+				5CB51ACC1E70380B005D3805 /* CommonApi.m */,
 				B443F4451E6FF2C800428A45 /* png */,
 				5CE51DC91E6C6DCA00FFAF2E /* db */,
 				5CE51DB41E6C55BA00FFAF2E /* lib */,
@@ -339,6 +344,7 @@
 				5CE51DCC1E6C6E7600FFAF2E /* AboutViewController.m in Sources */,
 				5C7950921E6A8F70007D0D78 /* main.m in Sources */,
 				5CE51DB21E6C373F00FFAF2E /* MapViewController.m in Sources */,
+				5CB51ACD1E70380B005D3805 /* CommonApi.m in Sources */,
 				5CE51DA91E6C36E700FFAF2E /* RootViewController.m in Sources */,
 				5CE51DBB1E6C5B3E00FFAF2E /* BaseViewController.m in Sources */,
 				5CE51DAC1E6C370200FFAF2E /* MainViewController.m in Sources */,
