@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>
+@interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate>
 {
     BOOL _firstLocationUpdate;
     NSString *locaddress,*lnglat,*altitude,*angleStr;

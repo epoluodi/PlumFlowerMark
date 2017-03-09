@@ -72,8 +72,11 @@
     table.dataSource=self;
     table.backgroundColor = [UIColor clearColor];
     locaddress = nil;
+    
+
     // Do any additional setup after loading the view.
 }
+
 
 //释放
 - (void)dealloc {
@@ -90,6 +93,21 @@
                         change:(NSDictionary *)change
                        context:(void *)context {
     CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
+    
+    if (myloc.coordinate.latitude != location.coordinate.latitude &&
+        myloc.coordinate.longitude != location.coordinate.longitude)
+    {
+        GMSGeocoder *geo =[GMSGeocoder geocoder];
+        [geo reverseGeocodeCoordinate:location.coordinate completionHandler:^(GMSReverseGeocodeResponse * geocode, NSError * err) {
+            if (err)
+                return ;
+            NSLog(@"%@",[geocode firstResult]);
+            GMSAddress *address = [geocode firstResult];
+            labaddr.text =[NSString stringWithFormat:@"%@%@%@%@%@",address.country,address.administrativeArea,address.locality,address.subLocality,(address.thoroughfare)?address.thoroughfare:@""
+                           ];
+            labaddr.textColor=[UIColor whiteColor];
+        }];
+    }
     myloc= location;
     if (!_firstLocationUpdate) {
         // If the first location update has not yet been recieved, then jump to that
@@ -105,12 +123,11 @@
         NSLog(@"速度 %f",location.speed); //速度
         mapview.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
                                                          zoom:16];
-      
-        
-        // 确定航向
-        
-
     }
+    
+
+    
+    
     lnglat = [NSString stringWithFormat:@"lat:%f lng:%f",myloc.coordinate.latitude,
               myloc.coordinate.longitude];
     altitude = [NSString stringWithFormat:@"%d m (%@)",(int)myloc.altitude,NSLocalizedString(@"altitude", nil)];
