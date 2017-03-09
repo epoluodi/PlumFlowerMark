@@ -13,3 +13,18 @@
 
 "AboutTitle"="关于";
 "AddTitle"="添加标记";
+
+"loadAddress"="正在获取地址";
+"altitude"="海拔";
+
+"course1"="北";
+"course2"="东北";
+"course3"="东";
+"course3"="东南";
+"course4"="南";
+"course5"="西南";
+"course6"="西";
+"course7"="西北";
+
+"nojpg"="没有图片";
+"noaudio"="没有语音";

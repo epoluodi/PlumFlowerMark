@@ -9,9 +9,15 @@
 #import "BaseViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface AddViewController : BaseViewController
+@interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>
 {
     BOOL _firstLocationUpdate;
+    NSString *locaddress,*lnglat,*altitude,*angleStr;
+    NSMutableArray<UIImage *>* imglist;
+    NSMutableArray<NSString *>* imgidlist;
+    NSString *recordpath;
+    
+    UILabel *labaddr,*lablnglat,*labaltitude,*labangleStr;
 }
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapview;

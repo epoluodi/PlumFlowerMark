@@ -14,3 +14,18 @@
 
 "AboutTitle"="About Info";
 "AddTitle"="Add Mark";
+
+"loadAddress"="Loading Address";
+"altitude"="altitude";
+
+"course1"="North";
+"course2"="Northeast";
+"course3"="East";
+"course3"="Southeast";
+"course4"="South";
+"course5"="Southwest";
+"course6"="West";
+"course7"="Northwest";
+
+"nojpg"="No Image";
+"noaudio"="No Voice";
