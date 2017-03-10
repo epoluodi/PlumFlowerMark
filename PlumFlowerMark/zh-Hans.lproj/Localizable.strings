@@ -20,11 +20,11 @@
 "course1"="北";
 "course2"="东北";
 "course3"="东";
-"course3"="东南";
-"course4"="南";
-"course5"="西南";
-"course6"="西";
-"course7"="西北";
+"course4"="东南";
+"course5"="南";
+"course6"="西南";
+"course7"="西";
+"course8"="西北";
 
 "nojpg"="没有图片";
 "noaudio"="没有语音";

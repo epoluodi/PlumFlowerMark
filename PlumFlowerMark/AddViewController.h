@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "EZRecordView.h"
 
 @interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate>
 {
@@ -18,6 +19,11 @@
     NSString *recordpath;
     
     UILabel *labaddr,*lablnglat,*labaltitude,*labangleStr;
+    
+    
+    //recordview
+    UIVisualEffectView *effectview ;
+    EZRecordView *ezview;
 }
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapview;

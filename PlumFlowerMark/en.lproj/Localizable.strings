@@ -21,11 +21,11 @@
 "course1"="North";
 "course2"="Northeast";
 "course3"="East";
-"course3"="Southeast";
-"course4"="South";
-"course5"="Southwest";
-"course6"="West";
-"course7"="Northwest";
+"course4"="Southeast";
+"course5"="South";
+"course6"="Southwest";
+"course7"="West";
+"course8"="Northwest";
 
 "nojpg"="No Image";
 "noaudio"="No Voice";

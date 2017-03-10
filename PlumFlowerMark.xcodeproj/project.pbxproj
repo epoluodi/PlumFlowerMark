@@ -24,6 +24,9 @@
 		5CE51DC41E6C624200FFAF2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CE51DC61E6C624200FFAF2E /* Localizable.strings */; };
 		5CE51DCC1E6C6E7600FFAF2E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DCB1E6C6E7600FFAF2E /* AboutViewController.m */; };
 		5CE51DCF1E6C6F2B00FFAF2E /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DCE1E6C6F2B00FFAF2E /* AddViewController.m */; };
+		B43016B41E723E3A00201489 /* EZAudioiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43016B31E723E3A00201489 /* EZAudioiOS.framework */; };
+		B43016B51E72418800201489 /* EZAudioiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43016B31E723E3A00201489 /* EZAudioiOS.framework */; };
+		B43016B61E72418800201489 /* EZAudioiOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B43016B31E723E3A00201489 /* EZAudioiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B443F4241E6FDC2A00428A45 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B443F4201E6FDC2A00428A45 /* GoogleMaps.bundle */; };
 		B443F4251E6FDC2A00428A45 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B443F4211E6FDC2A00428A45 /* GoogleMaps.framework */; };
 		B443F4261E6FDC2A00428A45 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B443F4221E6FDC2A00428A45 /* GoogleMapsBase.framework */; };
@@ -44,6 +47,10 @@
 		B443F4441E6FE17100428A45 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B443F4431E6FE17100428A45 /* Accelerate.framework */; };
 		B443F4471E6FF2C800428A45 /* btncamera.png in Resources */ = {isa = PBXBuildFile; fileRef = B443F4461E6FF2C800428A45 /* btncamera.png */; };
 		B443F4491E6FFA9300428A45 /* btnrecord.png in Resources */ = {isa = PBXBuildFile; fileRef = B443F4481E6FFA9300428A45 /* btnrecord.png */; };
+		B46A58001E7289420080B7F7 /* RecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B46A57FF1E7289420080B7F7 /* RecordView.xib */; };
+		B46A58031E728A0D0080B7F7 /* EZRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = B46A58021E728A0D0080B7F7 /* EZRecordView.m */; };
+		B46A58051E728B490080B7F7 /* Btn_record.png in Resources */ = {isa = PBXBuildFile; fileRef = B46A58041E728B490080B7F7 /* Btn_record.png */; };
+		B46A58091E72A93A0080B7F7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = B46A58081E72A93A0080B7F7 /* play.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B43016B61E72418800201489 /* EZAudioiOS.framework in CopyFiles */,
 				5CE51DB81E6C574400FFAF2E /* Common.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +100,7 @@
 		5CE51DCB1E6C6E7600FFAF2E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		5CE51DCD1E6C6F2B00FFAF2E /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		5CE51DCE1E6C6F2B00FFAF2E /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		B43016B31E723E3A00201489 /* EZAudioiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EZAudioiOS.framework; sourceTree = "<group>"; };
 		B443F4201E6FDC2A00428A45 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		B443F4211E6FDC2A00428A45 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		B443F4221E6FDC2A00428A45 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
@@ -112,6 +121,11 @@
 		B443F4431E6FE17100428A45 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		B443F4461E6FF2C800428A45 /* btncamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btncamera.png; sourceTree = "<group>"; };
 		B443F4481E6FFA9300428A45 /* btnrecord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnrecord.png; sourceTree = "<group>"; };
+		B46A57FF1E7289420080B7F7 /* RecordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordView.xib; sourceTree = "<group>"; };
+		B46A58011E728A0D0080B7F7 /* EZRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZRecordView.h; sourceTree = "<group>"; };
+		B46A58021E728A0D0080B7F7 /* EZRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRecordView.m; sourceTree = "<group>"; };
+		B46A58041E728B490080B7F7 /* Btn_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Btn_record.png; sourceTree = "<group>"; };
+		B46A58081E72A93A0080B7F7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,9 +137,11 @@
 				B443F4421E6FE15C00428A45 /* CoreText.framework in Frameworks */,
 				B443F4401E6FE14C00428A45 /* CoreGraphics.framework in Frameworks */,
 				B443F43E1E6FE11800428A45 /* AVFoundation.framework in Frameworks */,
+				B43016B41E723E3A00201489 /* EZAudioiOS.framework in Frameworks */,
 				B443F43C1E6FE11000428A45 /* CoreData.framework in Frameworks */,
 				B443F43A1E6FE10700428A45 /* CoreLocation.framework in Frameworks */,
 				B443F4381E6FE0FC00428A45 /* GLKit.framework in Frameworks */,
+				B43016B51E72418800201489 /* EZAudioiOS.framework in Frameworks */,
 				B443F4361E6FE0F300428A45 /* ImageIO.framework in Frameworks */,
 				B443F4341E6FE0E900428A45 /* OpenGLES.framework in Frameworks */,
 				B443F4321E6FE0E000428A45 /* QuartzCore.framework in Frameworks */,
@@ -163,6 +179,7 @@
 		5C79508F1E6A8F70007D0D78 /* PlumFlowerMark */ = {
 			isa = PBXGroup;
 			children = (
+				B46A57FE1E7289320080B7F7 /* CustomView */,
 				5CB51ACB1E70380B005D3805 /* CommonApi.h */,
 				5CB51ACC1E70380B005D3805 /* CommonApi.m */,
 				B443F4451E6FF2C800428A45 /* png */,
@@ -207,6 +224,7 @@
 		5CE51DB41E6C55BA00FFAF2E /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				B43016B21E723E3A00201489 /* EZAudio */,
 				B443F41F1E6FDC2A00428A45 /* GoogleMap */,
 				5CE51DB51E6C56C800FFAF2E /* Common.framework */,
 			);
@@ -218,6 +236,14 @@
 			children = (
 			);
 			path = db;
+			sourceTree = "<group>";
+		};
+		B43016B21E723E3A00201489 /* EZAudio */ = {
+			isa = PBXGroup;
+			children = (
+				B43016B31E723E3A00201489 /* EZAudioiOS.framework */,
+			);
+			path = EZAudio;
 			sourceTree = "<group>";
 		};
 		B443F41F1E6FDC2A00428A45 /* GoogleMap */ = {
@@ -255,10 +281,22 @@
 		B443F4451E6FF2C800428A45 /* png */ = {
 			isa = PBXGroup;
 			children = (
+				B46A58081E72A93A0080B7F7 /* play.png */,
+				B46A58041E728B490080B7F7 /* Btn_record.png */,
 				B443F4481E6FFA9300428A45 /* btnrecord.png */,
 				B443F4461E6FF2C800428A45 /* btncamera.png */,
 			);
 			path = png;
+			sourceTree = "<group>";
+		};
+		B46A57FE1E7289320080B7F7 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				B46A57FF1E7289420080B7F7 /* RecordView.xib */,
+				B46A58011E728A0D0080B7F7 /* EZRecordView.h */,
+				B46A58021E728A0D0080B7F7 /* EZRecordView.m */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,7 +366,10 @@
 				5CE51DBE1E6C61ED00FFAF2E /* InfoPlist.strings in Resources */,
 				B443F4241E6FDC2A00428A45 /* GoogleMaps.bundle in Resources */,
 				5C79509D1E6A8F70007D0D78 /* Assets.xcassets in Resources */,
+				B46A58091E72A93A0080B7F7 /* play.png in Resources */,
+				B46A58051E728B490080B7F7 /* Btn_record.png in Resources */,
 				5C79509B1E6A8F70007D0D78 /* Main.storyboard in Resources */,
+				B46A58001E7289420080B7F7 /* RecordView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +385,7 @@
 				5CE51DCC1E6C6E7600FFAF2E /* AboutViewController.m in Sources */,
 				5C7950921E6A8F70007D0D78 /* main.m in Sources */,
 				5CE51DB21E6C373F00FFAF2E /* MapViewController.m in Sources */,
+				B46A58031E728A0D0080B7F7 /* EZRecordView.m in Sources */,
 				5CB51ACD1E70380B005D3805 /* CommonApi.m in Sources */,
 				5CE51DA91E6C36E700FFAF2E /* RootViewController.m in Sources */,
 				5CE51DBB1E6C5B3E00FFAF2E /* BaseViewController.m in Sources */,
@@ -493,6 +535,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PlumFlowerMark/lib",
 					"$(PROJECT_DIR)/PlumFlowerMark/lib/GoogleMap",
+					"$(PROJECT_DIR)/PlumFlowerMark/lib/EZAudio",
 				);
 				INFOPLIST_FILE = PlumFlowerMark/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -512,6 +555,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PlumFlowerMark/lib",
 					"$(PROJECT_DIR)/PlumFlowerMark/lib/GoogleMap",
+					"$(PROJECT_DIR)/PlumFlowerMark/lib/EZAudio",
 				);
 				INFOPLIST_FILE = PlumFlowerMark/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

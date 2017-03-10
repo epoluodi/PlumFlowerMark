@@ -50,7 +50,7 @@
 
     btn1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnsave"] style:UIBarButtonItemStylePlain target:nil action:nil];
     btn2 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btncamera"] style:UIBarButtonItemStylePlain target:nil action:nil];
-    btn3 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnrecord"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    btn3 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnrecord"] style:UIBarButtonItemStylePlain target:self action:@selector(clickRecord)];
     [navtitle setRightBarButtonItems:@[btn1,btn2,btn3]];
     
     mapview.settings.compassButton = YES;
@@ -67,7 +67,7 @@
     });
     
     rows=6;
-
+    
     table.delegate=self;
     table.dataSource=self;
     table.backgroundColor = [UIColor clearColor];
@@ -77,6 +77,20 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+    if (effectview){
+        [UIView animateWithDuration:0.3 animations:^{
+                  effectview.transform = CGAffineTransformMakeTranslation(0, 0);
+        } completion:^(BOOL finished) {
+            [effectview removeFromSuperview];
+            [ezview viewUnload];
+            [ezview removeFromSuperview];
+            ezview=nil;
+            effectview=nil;
+        }];
+    }
+}
 
 //释放
 - (void)dealloc {
@@ -85,6 +99,8 @@
                      context:NULL];
 
 }
+
+
 
 
 //定位通知
@@ -143,8 +159,10 @@
         angleStr =[NSString stringWithFormat:@"%f(%@)",myloc.course, NSLocalizedString(@"course5", nil)];
     else if (myloc.course >180 && myloc.course < 270)
         angleStr =[NSString stringWithFormat:@"%f(%@)",myloc.course, NSLocalizedString(@"course6", nil)];
-    else if (myloc.course >270 && myloc.course < 360)
+    else if (myloc.course ==270)
         angleStr =[NSString stringWithFormat:@"%f(%@)",myloc.course, NSLocalizedString(@"course7", nil)];
+    else if (myloc.course >270 && myloc.course < 360)
+        angleStr =[NSString stringWithFormat:@"%f(%@)",myloc.course, NSLocalizedString(@"course8", nil)];
 
     lablnglat.text=lnglat;
     labaltitude.text=altitude;
@@ -284,6 +302,35 @@
     }
     
     return cell;
+}
+
+
+
+
+
+//开始录音
+-(void)clickRecord
+{
+    
+    if (effectview)
+        return;
+    
+    [table scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    
+ 
+    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
+    effectview.frame = CGRectMake(0, table.frame.size.height , table.frame.size.width, 120);
+    [table addSubview:effectview];
+    
+    NSArray *arry = [[NSBundle mainBundle] loadNibNamed:@"RecordView" owner:nil options:nil];
+    ezview = arry[0];
+    ezview.frame = CGRectMake(0, 0, effectview.frame.size.width, effectview.frame.size.height);
+    [effectview addSubview:ezview];
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        effectview.transform = CGAffineTransformMakeTranslation(0, -120);
+    }];
 }
 
 
