@@ -9,14 +9,15 @@
 #import "BaseViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "EZRecordView.h"
+#import "EZAudioView.h"
 
-@interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate>
+@interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate,RecordDelegate>
 {
     BOOL _firstLocationUpdate;
     NSString *locaddress,*lnglat,*altitude,*angleStr;
     NSMutableArray<UIImage *>* imglist;
     NSMutableArray<NSString *>* imgidlist;
-    NSString *recordpath;
+    NSString *recordpath,*recorduuid,*remark;
     
     UILabel *labaddr,*lablnglat,*labaltitude,*labangleStr;
     
@@ -24,6 +25,10 @@
     //recordview
     UIVisualEffectView *effectview ;
     EZRecordView *ezview;
+    
+    EZAudioView *audioview;
+    EZAudioFile *audiofile;
+    EZAudioPlot *audioplot;
 }
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapview;

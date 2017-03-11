@@ -11,6 +11,7 @@
 
 @implementation EZRecordView
 @synthesize btnrecord;
+@synthesize delegate;
 -(void)awakeFromNib
 {
     [super awakeFromNib];
@@ -25,30 +26,14 @@
     audioplot.plotType        = EZPlotTypeRolling;
     audioplot.shouldFill      = YES;
     audioplot.shouldMirror    = YES;
-    audioplot.gain=1;
+    audioplot.gain=2;
     [self addSubview:audioplot];
     labtime = [[UILabel alloc] init];
     labtime.frame = CGRectMake(audioplot.frame.size.width-100, 5, 80, 40);
     [audioplot addSubview:labtime];
     labtime.textColor = [UIColor grayColor];
     labtime.textAlignment = NSTextAlignmentRight;
-    
-    audioplayer = [[EZAudioPlot alloc] init];
-    audioplayer.backgroundColor = [UIColor clearColor];
-    audioplayer.color           = [UIColor greenColor];
-    audioplayer.plotType        = EZPlotTypeRolling;
-    audioplayer.shouldFill      = YES;
-    audioplayer.shouldMirror    = YES;
-    audioplayer.gain=1;
-    audioplayer.frame =  CGRectMake(8, 5, self.frame.size.width- 66 -26, self.frame.size.height-10);
-    audioplayer.userInteractionEnabled=YES;
-    _btnplayerandpause = [[UIButton alloc] init];
-    _btnplayerandpause.frame = CGRectMake(audioplayer.frame.size.width-60, audioplayer.frame.size.height-20, 15, 15);
-    [_btnplayerandpause setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
-    _btnplayerandpause.userInteractionEnabled=YES;
-    [audioplayer addSubview: _btnplayerandpause];
-    [self addSubview:audioplayer];
-    audioplayer.hidden=YES;
+
     
     AVAudioSession *session = [AVAudioSession sharedInstance];
     NSError *error;
@@ -72,15 +57,15 @@
     _player = [EZAudioPlayer audioPlayerWithDelegate:self];
     
     [btnrecord addTarget:self action:@selector(toggleRecording:) forControlEvents:UIControlEventTouchDown];
-    [btnrecord addTarget:self action:@selector(toggleStopRecord) forControlEvents:UIControlEventTouchUpInside];
-    [btnrecord addTarget:self action:@selector(cancelRecord) forControlEvents:UIControlEventTouchUpOutside|UIControlEventTouchDragOutside];
+    [btnrecord addTarget:self action:@selector(toggleFinishRecord) forControlEvents:UIControlEventTouchUpInside];
+    [btnrecord addTarget:self action:@selector(cancelRecord) forControlEvents:UIControlEventTouchUpOutside];
     
     isPlaying=NO;
     [self setupNotifications];
     
 }
 
-
+//释放
 -(void)viewUnload
 {
     [_player pause];
@@ -89,10 +74,12 @@
     
     AVAudioSession *session = [AVAudioSession sharedInstance];
     NSError *error;
-    [session setActive:NO error:&error];
-
-    
-
+    [session setCategory:AVAudioSessionCategoryPlayback error:&error];
+    if (error)
+    {
+        NSLog(@"Error setting up audio session category: %@", error.localizedDescription);
+    }
+   
 }
 
 - (void)setupNotifications
@@ -131,9 +118,9 @@
 - (void)playerDidReachEndOfFile:(NSNotification *)notification
 {
 
-    dispatch_async(dispatch_get_main_queue(), ^{
-       
-    });
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//       
+//    });
 }
 
 
@@ -143,19 +130,25 @@
 -(void)cancelRecord
 {
     [self toggleStopRecord];
-    audioplayer.hidden=YES;
+
     NSFileManager *filemanger = [NSFileManager defaultManager];
     [filemanger removeItemAtPath:filepath error:nil];
+    [delegate RecordCancel];
   
 }
 
+-(void)toggleFinishRecord
+{
+        [self toggleStopRecord];
+        [delegate RecordFinish:uuidfile filepath:filepath];
+}
 //停止录音
 -(void)toggleStopRecord
 {
     [microphone stopFetchingAudio];
     [_recorder closeAudioFile];
     IsRecording= NO;
-    audioplayer.hidden=NO;;
+
 }
 - (void)toggleRecording:(id)sender
 {
@@ -257,8 +250,5 @@
 }
 
 
--(void)microphone:(EZMicrophone *)microphone changedPlayingState:(BOOL)isPlaying
-{
-    
-}
+
 @end

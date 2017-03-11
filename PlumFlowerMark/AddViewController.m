@@ -49,7 +49,7 @@
     
 
     btn1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnsave"] style:UIBarButtonItemStylePlain target:nil action:nil];
-    btn2 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btncamera"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    btn2 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btncamera"] style:UIBarButtonItemStylePlain target:self action:@selector(showSheet)];
     btn3 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnrecord"] style:UIBarButtonItemStylePlain target:self action:@selector(clickRecord)];
     [navtitle setRightBarButtonItems:@[btn1,btn2,btn3]];
     
@@ -66,7 +66,7 @@
         mapview.myLocationEnabled = YES;
     });
     
-    rows=6;
+    rows=7;
     
     table.delegate=self;
     table.dataSource=self;
@@ -77,6 +77,27 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    if(audioview)
+      [ audioview viewResume];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    if (effectview){
+        [effectview removeFromSuperview];
+        [ezview viewUnload];
+        [ezview removeFromSuperview];
+        ezview=nil;
+        effectview=nil;
+    }
+    if(audioview)
+        [ audioview viewPause];
+}
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
     if (effectview){
@@ -90,6 +111,8 @@
             effectview=nil;
         }];
     }
+    if(audioview)
+        [ audioview playStop];
 }
 
 //释放
@@ -193,6 +216,7 @@
             return 60;
         case 4:
         case 5:
+        case 6:
             return 80;
     }
     return 0;
@@ -260,16 +284,50 @@
             break;
         case 4:
    
+            if (remark){
+                
+            }
+            else
+            {
+                
+                UIButton *btnadd = [[UIButton alloc] init];
+                btnadd.frame =CGRectMake( [PublicCommon GetALLScreen].size.width /2 - 10, 16, 20, 20);
+                [btnadd setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+
+                [cell.contentView addSubview:btnadd];
+                lab = [[UILabel alloc] init];
+                lab.frame  = CGRectMake(50, 80-35, [PublicCommon GetALLScreen].size.width-100, 30);
+                lab.textAlignment= NSTextAlignmentCenter;
+                lab.numberOfLines=2;
+   
+                lab.lineBreakMode = NSLineBreakByTruncatingTail;
+                lab.text=NSLocalizedString(@"noremark", nil);
+                lab.textColor= [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+            }
+            [cell.contentView addSubview:lab];
+            line = [[UIView alloc] init];
+            line.frame= CGRectMake(30, 79, [PublicCommon GetALLScreen].size.width-60, 1);
+            line.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
+            [cell.contentView addSubview:line];
+            break;
+        case 5:
+            
             if (imglist.count > 0){
                 
             }
             else
             {
+                
+                UIButton *btnadd = [[UIButton alloc] init];
+                btnadd.frame =CGRectMake( [PublicCommon GetALLScreen].size.width /2 - 10, 16, 20, 20);
+                [btnadd setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+                [btnadd addTarget:self action:@selector(showSheet) forControlEvents:UIControlEventTouchUpInside];
+                [cell.contentView addSubview:btnadd];
                 lab = [[UILabel alloc] init];
-                lab.frame  = CGRectMake(50, 0, [PublicCommon GetALLScreen].size.width-100, 80);
+                lab.frame  = CGRectMake(50, 80-35, [PublicCommon GetALLScreen].size.width-100, 30);
                 lab.textAlignment= NSTextAlignmentCenter;
                 lab.numberOfLines=2;
-   
+                
                 lab.lineBreakMode = NSLineBreakByTruncatingTail;
                 lab.text=NSLocalizedString(@"nojpg", nil);
                 lab.textColor= [[UIColor whiteColor] colorWithAlphaComponent:0.6];
@@ -280,17 +338,29 @@
             line.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
             [cell.contentView addSubview:line];
             break;
-        case 5:
+
+        case 6:
       
             if (recordpath){
-                
+                if (!audioview)
+                {
+                    audioview = [[EZAudioView alloc] initAudioView:CGRectMake(0, 0, [PublicCommon GetALLScreen].size.width, 80)];
+                    
+                }
+                [audioview updateRecordInfo:recorduuid];
+                [cell.contentView addSubview:audioview];
             }
             else
             {
+                UIButton *btnadd = [[UIButton alloc] init];
+                btnadd.frame =CGRectMake( [PublicCommon GetALLScreen].size.width /2 -10, 16, 20, 20);
+                [btnadd setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+                [btnadd addTarget:self action:@selector(clickRecord) forControlEvents:UIControlEventTouchUpInside];
+                [cell.contentView addSubview:btnadd];
                 lab = [[UILabel alloc] init];
-                lab.frame  = CGRectMake(50, 0, [PublicCommon GetALLScreen].size.width-100, 80);
+                lab.frame  = CGRectMake(50, 80-35, [PublicCommon GetALLScreen].size.width-100, 30);
                 lab.textAlignment= NSTextAlignmentCenter;
-                lab.numberOfLines=2;
+                lab.numberOfLines=1;
          
                 lab.lineBreakMode = NSLineBreakByTruncatingTail;
                 lab.text=NSLocalizedString(@"noaudio", nil);
@@ -305,6 +375,55 @@
 }
 
 
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 6:
+            return   UITableViewCellEditingStyleDelete;
+            
+        default:
+            return UITableViewCellEditingStyleNone;
+    }
+
+}
+
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+/////////////
+
+
+
+
+/*删除用到的函数*/
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  
+    if (recordpath)
+    {
+        if (audioview)
+        {
+            [audioview playStop];
+            [audioview viewPause];
+            [audioview removeFromSuperview];
+            audioview =nil;
+            
+        }
+        recordpath = nil;
+        recorduuid = nil;
+        [tableView reloadData];
+    }
+    
+    
+
+    
+}
+
+
+
+
 
 
 
@@ -315,22 +434,79 @@
     if (effectview)
         return;
     
-    [table scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    [table scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     
  
     UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
-    effectview.frame = CGRectMake(0, table.frame.size.height , table.frame.size.width, 120);
-    [table addSubview:effectview];
+    effectview.frame = CGRectMake(0, self.view.frame.size.height , self.view.frame.size.width, 120);
+    [self.view addSubview:effectview];
     
     NSArray *arry = [[NSBundle mainBundle] loadNibNamed:@"RecordView" owner:nil options:nil];
     ezview = arry[0];
     ezview.frame = CGRectMake(0, 0, effectview.frame.size.width, effectview.frame.size.height);
+    ezview.delegate=self;
     [effectview addSubview:ezview];
     
     [UIView animateWithDuration:0.2 animations:^{
         effectview.transform = CGAffineTransformMakeTranslation(0, -120);
     }];
+}
+
+
+
+#pragma mark RecordDelegate
+-(void)RecordFinish:(NSString *)uuid filepath:(NSString *)filepath
+{
+   NSLog(@"录音完成 uuid %@ 文件地址 %@",uuid,filepath);
+    
+    recorduuid=[uuid copy];
+    recordpath = [filepath copy];
+    if (effectview){
+        [UIView animateWithDuration:0.3 animations:^{
+            effectview.transform = CGAffineTransformMakeTranslation(0, 0);
+        } completion:^(BOOL finished) {
+            [effectview removeFromSuperview];
+            [ezview viewUnload];
+            [ezview removeFromSuperview];
+            ezview=nil;
+            effectview=nil;
+        }];
+    }
+    
+    [table reloadData];
+    if (audioview)
+        [ audioview viewResume];
+}
+
+
+
+
+-(void)RecordCancel
+{
+    NSLog(@"录音取消");
+    if (audioview)
+        [ audioview viewResume];
+}
+
+
+
+#pragma mark picture
+-(void)showSheet
+{
+    UIAlertController *alert  = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"selectpicturetitle", nil) message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *action1=[UIAlertAction actionWithTitle:NSLocalizedString(@"picturebtn1", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    UIAlertAction *action2=[UIAlertAction actionWithTitle:NSLocalizedString(@"picturebtn2", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    UIAlertAction *action3=[UIAlertAction actionWithTitle:NSLocalizedString(@"btncancel", nil) style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:action1];
+    [alert addAction:action2];
+    [alert addAction:action3];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 

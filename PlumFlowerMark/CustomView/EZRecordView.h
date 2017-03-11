@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <EZAudioiOS/EZAudioPlotGL.h>
-#import <EZAudioiOS/EZMicrophone.h>
-#import <EZAudioiOS/EZRecorder.h>
-#import <EZAudioiOS/EZAudioPlot.h>
-#import <EZAudioiOS/EZAudioPlayer.h>
+#import <EZAudioiOS/EZAudio.h>
+
+@protocol RecordDelegate
+
+-(void)RecordFinish:(NSString *)uuid filepath:(NSString *)filepath;
+-(void)RecordCancel;
+
+
+@end
 
 @interface EZRecordView : UIView<EZMicrophoneDelegate,EZRecorderDelegate,EZAudioPlayerDelegate>
 {
@@ -22,15 +26,16 @@
     NSString *uuidfile,*filepath;//录音文件
     NSURL *fileurl;
     UILabel *labtime;
-    EZAudioPlot *audioplayer;
+
     EZAudioPlayer *_player;
     BOOL isPlaying;
     
-    UIButton *_btnplayerandpause,*_btnstop;
+ 
     
 
 }
 
+@property (weak,nonatomic)NSObject<RecordDelegate>* delegate;
 @property (weak, nonatomic) IBOutlet UIButton *btnrecord;
 
 -(void)viewUnload;

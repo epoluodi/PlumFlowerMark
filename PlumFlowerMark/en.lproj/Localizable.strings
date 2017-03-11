@@ -14,9 +14,16 @@
 
 "AboutTitle"="About Info";
 "AddTitle"="Add Mark";
+"btncancel"="Cancel";
+
+"selectpicturetitle"="Select Picture";
+"picturebtn1"="Camera";
+"picturebtn2"="Photos";
+
 
 "loadAddress"="Loading Address";
 "altitude"="altitude";
+
 
 "course1"="North";
 "course2"="Northeast";
@@ -29,3 +36,4 @@
 
 "nojpg"="No Image";
 "noaudio"="No Voice";
+"noremark"="No ReMark";

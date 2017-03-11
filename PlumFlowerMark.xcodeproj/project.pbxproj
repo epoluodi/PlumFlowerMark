@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C2618D31E73A21600507762 /* EZAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2618D21E73A21600507762 /* EZAudioView.m */; };
+		5C2618D51E73B3CC00507762 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C2618D41E73B3CC00507762 /* stop.png */; };
+		5C2618D81E73B8FB00507762 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C2618D71E73B8FB00507762 /* pause.png */; };
+		5C2618DA1E742ACF00507762 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C2618D91E742ACF00507762 /* add.png */; };
 		5C7950921E6A8F70007D0D78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7950911E6A8F70007D0D78 /* main.m */; };
 		5C7950951E6A8F70007D0D78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7950941E6A8F70007D0D78 /* AppDelegate.m */; };
 		5C79509B1E6A8F70007D0D78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7950991E6A8F70007D0D78 /* Main.storyboard */; };
@@ -68,6 +72,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5C2618D11E73A21600507762 /* EZAudioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAudioView.h; sourceTree = "<group>"; };
+		5C2618D21E73A21600507762 /* EZAudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZAudioView.m; sourceTree = "<group>"; };
+		5C2618D41E73B3CC00507762 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		5C2618D71E73B8FB00507762 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		5C2618D91E742ACF00507762 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		5C79508D1E6A8F70007D0D78 /* PlumFlowerMark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlumFlowerMark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7950911E6A8F70007D0D78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5C7950931E6A8F70007D0D78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -281,6 +290,9 @@
 		B443F4451E6FF2C800428A45 /* png */ = {
 			isa = PBXGroup;
 			children = (
+				5C2618D91E742ACF00507762 /* add.png */,
+				5C2618D71E73B8FB00507762 /* pause.png */,
+				5C2618D41E73B3CC00507762 /* stop.png */,
 				B46A58081E72A93A0080B7F7 /* play.png */,
 				B46A58041E728B490080B7F7 /* Btn_record.png */,
 				B443F4481E6FFA9300428A45 /* btnrecord.png */,
@@ -295,6 +307,8 @@
 				B46A57FF1E7289420080B7F7 /* RecordView.xib */,
 				B46A58011E728A0D0080B7F7 /* EZRecordView.h */,
 				B46A58021E728A0D0080B7F7 /* EZRecordView.m */,
+				5C2618D11E73A21600507762 /* EZAudioView.h */,
+				5C2618D21E73A21600507762 /* EZAudioView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -360,10 +374,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE51DC41E6C624200FFAF2E /* Localizable.strings in Resources */,
+				5C2618D81E73B8FB00507762 /* pause.png in Resources */,
 				5C7950A01E6A8F70007D0D78 /* LaunchScreen.storyboard in Resources */,
 				B443F4471E6FF2C800428A45 /* btncamera.png in Resources */,
 				B443F4491E6FFA9300428A45 /* btnrecord.png in Resources */,
 				5CE51DBE1E6C61ED00FFAF2E /* InfoPlist.strings in Resources */,
+				5C2618D51E73B3CC00507762 /* stop.png in Resources */,
+				5C2618DA1E742ACF00507762 /* add.png in Resources */,
 				B443F4241E6FDC2A00428A45 /* GoogleMaps.bundle in Resources */,
 				5C79509D1E6A8F70007D0D78 /* Assets.xcassets in Resources */,
 				B46A58091E72A93A0080B7F7 /* play.png in Resources */,
@@ -380,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2618D31E73A21600507762 /* EZAudioView.m in Sources */,
 				5CE51DAF1E6C373500FFAF2E /* ListViewController.m in Sources */,
 				5C7950951E6A8F70007D0D78 /* AppDelegate.m in Sources */,
 				5CE51DCC1E6C6E7600FFAF2E /* AboutViewController.m in Sources */,
