@@ -321,7 +321,8 @@
                 UIButton *btnadd = [[UIButton alloc] init];
                 btnadd.frame =CGRectMake( [PublicCommon GetALLScreen].size.width /2 - 10, 16, 20, 20);
                 [btnadd setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-                [btnadd addTarget:self action:@selector(showSheet) forControlEvents:UIControlEventTouchUpInside];
+                [btnadd addTarget:self action:@selector(showSheet
+                                                        ) forControlEvents:UIControlEventTouchUpInside];
                 [cell.contentView addSubview:btnadd];
                 lab = [[UILabel alloc] init];
                 lab.frame  = CGRectMake(50, 80-35, [PublicCommon GetALLScreen].size.width-100, 30);
