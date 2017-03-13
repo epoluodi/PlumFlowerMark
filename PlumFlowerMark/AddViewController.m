@@ -17,6 +17,7 @@
  */
 #import "AddViewController.h"
 #import <Common/PublicCommon.h>
+#import <Common/FileCommon.h>
 
 @interface AddViewController ()
 {
@@ -36,7 +37,6 @@
     self.view.backgroundColor = [UIColor blackColor];
     navtitle.title = NSLocalizedString(@"AddTitle", nil);
     
-    imglist = [[NSMutableArray alloc] init];
     imgidlist = [[NSMutableArray alloc] init];
     
     labaddr = [[UILabel alloc] init];
@@ -214,8 +214,12 @@
         case 2:
         case 3:
             return 60;
-        case 4:
+
         case 5:
+            if (imgidlist.count ==0)
+                return 80;
+            return 16 + ((imgidlist.count *380) + (imgidlist.count *8) );
+        case 4:
         case 6:
             return 80;
     }
@@ -229,6 +233,7 @@
     cell.backgroundColor = [UIColor clearColor];
     UILabel *lab;
     UIView *line;
+    int _height=0;
     switch (indexPath.row) {
         case 0:
     
@@ -286,6 +291,7 @@
    
             if (remark){
                 
+            
             }
             else
             {
@@ -303,8 +309,9 @@
                 lab.lineBreakMode = NSLineBreakByTruncatingTail;
                 lab.text=NSLocalizedString(@"noremark", nil);
                 lab.textColor= [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+                [cell.contentView addSubview:lab];
             }
-            [cell.contentView addSubview:lab];
+   
             line = [[UIView alloc] init];
             line.frame= CGRectMake(30, 79, [PublicCommon GetALLScreen].size.width-60, 1);
             line.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
@@ -312,7 +319,35 @@
             break;
         case 5:
             
-            if (imglist.count > 0){
+            _height=79;
+            if (imgidlist.count > 0){
+                int index=0;
+                for (NSString *filepath in imgidlist) {
+            
+                    UIButton *btndeleteimg= [[UIButton alloc] init];
+         
+                    UIImageView *imgview = [[UIImageView alloc] init];
+                    imgview.frame = CGRectMake(35, 8 + ((index *380) + (index *8) ), [PublicCommon GetALLScreen].size.width-70, 380);
+                    NSData *jpg = [NSData dataWithContentsOfFile:filepath];
+                    imgview.image = [UIImage imageWithData:jpg];
+                    imgview.contentMode = UIViewContentModeScaleAspectFit;
+                    [cell.contentView addSubview:imgview];
+                    imgview.clipsToBounds=YES;
+                  
+                    
+                    btndeleteimg.frame = CGRectMake(imgview.frame.size.width/2 -20, imgview.frame.size.height-40 , 40, 40);
+                    btndeleteimg.alpha=0.6f;
+                    btndeleteimg.userInteractionEnabled=YES;
+                    imgview.userInteractionEnabled=YES;
+                    btndeleteimg.tag = index;
+                    [btndeleteimg addTarget:self action:@selector(deletePhoto:) forControlEvents:UIControlEventTouchUpInside];
+                    [btndeleteimg setImage: [UIImage imageNamed:@"deletephoto"] forState:UIControlStateNormal];
+                    [imgview addSubview:btndeleteimg];
+                    index++;
+           
+                }
+                
+                _height = imgidlist.count *380+ (index *8)  +16 -1;
                 
             }
             else
@@ -332,10 +367,11 @@
                 lab.lineBreakMode = NSLineBreakByTruncatingTail;
                 lab.text=NSLocalizedString(@"nojpg", nil);
                 lab.textColor= [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+                [cell.contentView addSubview:lab];
             }
-            [cell.contentView addSubview:lab];
+     
             line = [[UIView alloc] init];
-            line.frame= CGRectMake(30, 79, [PublicCommon GetALLScreen].size.width-60, 1);
+            line.frame= CGRectMake(30, _height, [PublicCommon GetALLScreen].size.width-60, 1);
             line.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
             [cell.contentView addSubview:line];
             break;
@@ -495,12 +531,15 @@
 #pragma mark picture
 -(void)showSheet
 {
+    
+    __weak __typeof(self) weakself = self;
     UIAlertController *alert  = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"selectpicturetitle", nil) message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *action1=[UIAlertAction actionWithTitle:NSLocalizedString(@"picturebtn1", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakself ClickMore:1];
         
     }];
     UIAlertAction *action2=[UIAlertAction actionWithTitle:NSLocalizedString(@"picturebtn2", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+        [weakself ClickMore:2];
     }];
     UIAlertAction *action3=[UIAlertAction actionWithTitle:NSLocalizedString(@"btncancel", nil) style:UIAlertActionStyleCancel handler:nil];
     [alert addAction:action1];
@@ -509,6 +548,66 @@
     
     [self presentViewController:alert animated:YES completion:nil];
 }
+
+
+
+//更多
+-(void)ClickMore:(int)moretype
+{
+    switch (moretype) {
+        case 1:
+            
+            pickerview = [[UIImagePickerController alloc] init];//初始化
+            pickerview.delegate = self;
+            pickerview.allowsEditing = YES;//设置可编辑
+            pickerview.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:pickerview animated:YES completion:nil];//进入照相界面
+            break;
+        case  2:
+            pickerview = [[UIImagePickerController alloc] init];//初始化
+            pickerview.delegate = self;
+            pickerview.allowsEditing = YES;//设置可编辑
+            pickerview.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:pickerview animated:YES completion:nil];//进入照相界面
+            break;
+            
+    }
+    NSLog(@"更多选择 %lu",(unsigned long)moretype);
+}
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    NSLog(@"SMILE!");
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    NSData *photo =UIImageJPEGRepresentation(image,0.5);
+    NSString *_uuid = [[NSUUID UUID] UUIDString];
+    NSString *_filepath = [[FileCommon getCacheDirectory] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",_uuid]];
+    [photo writeToFile:_filepath atomically:YES];
+    
+    [imgidlist addObject:_filepath];
+    
+    [table beginUpdates];
+    [table reloadData];
+    [table endUpdates];
+    
+    
+}
+
+
+-(void)deletePhoto:(id)sender
+{
+    UIButton *_btn = (UIButton *)sender;
+    int i = _btn.tag;
+    [imgidlist removeObjectAtIndex:i];
+    [table beginUpdates];
+    [table reloadData];
+    [table endUpdates];
+}
+
+
 
 
 - (void)didReceiveMemoryWarning {

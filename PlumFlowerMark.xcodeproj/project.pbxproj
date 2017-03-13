@@ -55,6 +55,7 @@
 		B46A58031E728A0D0080B7F7 /* EZRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = B46A58021E728A0D0080B7F7 /* EZRecordView.m */; };
 		B46A58051E728B490080B7F7 /* Btn_record.png in Resources */ = {isa = PBXBuildFile; fileRef = B46A58041E728B490080B7F7 /* Btn_record.png */; };
 		B46A58091E72A93A0080B7F7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = B46A58081E72A93A0080B7F7 /* play.png */; };
+		B4D2CE0E1E768F66002B5CAF /* deletephoto.png in Resources */ = {isa = PBXBuildFile; fileRef = B4D2CE0D1E768F66002B5CAF /* deletephoto.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -135,6 +136,7 @@
 		B46A58021E728A0D0080B7F7 /* EZRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRecordView.m; sourceTree = "<group>"; };
 		B46A58041E728B490080B7F7 /* Btn_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Btn_record.png; sourceTree = "<group>"; };
 		B46A58081E72A93A0080B7F7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		B4D2CE0D1E768F66002B5CAF /* deletephoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deletephoto.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 		B443F4451E6FF2C800428A45 /* png */ = {
 			isa = PBXGroup;
 			children = (
+				B4D2CE0D1E768F66002B5CAF /* deletephoto.png */,
 				5C2618D91E742ACF00507762 /* add.png */,
 				5C2618D71E73B8FB00507762 /* pause.png */,
 				5C2618D41E73B3CC00507762 /* stop.png */,
@@ -387,6 +390,7 @@
 				B46A58051E728B490080B7F7 /* Btn_record.png in Resources */,
 				5C79509B1E6A8F70007D0D78 /* Main.storyboard in Resources */,
 				B46A58001E7289420080B7F7 /* RecordView.xib in Resources */,
+				B4D2CE0E1E768F66002B5CAF /* deletephoto.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

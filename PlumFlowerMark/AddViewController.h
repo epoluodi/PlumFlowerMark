@@ -11,11 +11,11 @@
 #import "EZRecordView.h"
 #import "EZAudioView.h"
 
-@interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate,RecordDelegate>
+@interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate,RecordDelegate,UIImagePickerControllerDelegate>
 {
     BOOL _firstLocationUpdate;
     NSString *locaddress,*lnglat,*altitude,*angleStr;
-    NSMutableArray<UIImage *>* imglist;
+  
     NSMutableArray<NSString *>* imgidlist;
     NSString *recordpath,*recorduuid,*remark;
     
@@ -29,6 +29,9 @@
     EZAudioView *audioview;
     EZAudioFile *audiofile;
     EZAudioPlot *audioplot;
+    
+    //图片
+    UIImagePickerController *pickerview;
 }
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapview;

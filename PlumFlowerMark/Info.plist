@@ -20,10 +20,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Take Photo</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>快速定位功能</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Recording</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Get a Photo</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
