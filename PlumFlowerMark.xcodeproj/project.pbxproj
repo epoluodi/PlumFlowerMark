@@ -55,6 +55,7 @@
 		B46A58031E728A0D0080B7F7 /* EZRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = B46A58021E728A0D0080B7F7 /* EZRecordView.m */; };
 		B46A58051E728B490080B7F7 /* Btn_record.png in Resources */ = {isa = PBXBuildFile; fileRef = B46A58041E728B490080B7F7 /* Btn_record.png */; };
 		B46A58091E72A93A0080B7F7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = B46A58081E72A93A0080B7F7 /* play.png */; };
+		B4BEB6B81E77D34500B42DBF /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BEB6B71E77D34500B42DBF /* TextViewController.m */; };
 		B4D2CE0E1E768F66002B5CAF /* deletephoto.png in Resources */ = {isa = PBXBuildFile; fileRef = B4D2CE0D1E768F66002B5CAF /* deletephoto.png */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +137,8 @@
 		B46A58021E728A0D0080B7F7 /* EZRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRecordView.m; sourceTree = "<group>"; };
 		B46A58041E728B490080B7F7 /* Btn_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Btn_record.png; sourceTree = "<group>"; };
 		B46A58081E72A93A0080B7F7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		B4BEB6B61E77D34500B42DBF /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		B4BEB6B71E77D34500B42DBF /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		B4D2CE0D1E768F66002B5CAF /* deletephoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deletephoto.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,6 +223,8 @@
 				5CE51DCB1E6C6E7600FFAF2E /* AboutViewController.m */,
 				5CE51DCD1E6C6F2B00FFAF2E /* AddViewController.h */,
 				5CE51DCE1E6C6F2B00FFAF2E /* AddViewController.m */,
+				B4BEB6B61E77D34500B42DBF /* TextViewController.h */,
+				B4BEB6B71E77D34500B42DBF /* TextViewController.m */,
 			);
 			path = PlumFlowerMark;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				5C2618D31E73A21600507762 /* EZAudioView.m in Sources */,
 				5CE51DAF1E6C373500FFAF2E /* ListViewController.m in Sources */,
 				5C7950951E6A8F70007D0D78 /* AppDelegate.m in Sources */,
+				B4BEB6B81E77D34500B42DBF /* TextViewController.m in Sources */,
 				5CE51DCC1E6C6E7600FFAF2E /* AboutViewController.m in Sources */,
 				5C7950921E6A8F70007D0D78 /* main.m in Sources */,
 				5CE51DB21E6C373F00FFAF2E /* MapViewController.m in Sources */,
