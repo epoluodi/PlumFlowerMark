@@ -23,7 +23,7 @@
     audioplot.frame = CGRectMake(8, 5, self.frame.size.width- 66 -26, self.frame.size.height-10);
     audioplot.backgroundColor = [UIColor colorWithRed:0.141 green:0.141 blue:0.141 alpha:0.15];
     audioplot.color           = [UIColor colorWithRed:0.323 green:0.694 blue:0.993 alpha:1.00];
-    audioplot.plotType        = EZPlotTypeRolling;
+    audioplot.plotType        = EZPlotTypeBuffer;
     audioplot.shouldFill      = YES;
     audioplot.shouldMirror    = YES;
     audioplot.gain=2;

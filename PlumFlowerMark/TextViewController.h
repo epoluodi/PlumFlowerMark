@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TextViewInputDelegate
+
+-(void)FinishInput:(NSString*)txt;
+
+@end
+
 @interface TextViewController : UIViewController
 
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navtitle;
 @property (weak, nonatomic) IBOutlet UITextView *txtmemo;
-
+@property (weak,nonatomic) NSObject<TextViewInputDelegate> *delegate;
 @end

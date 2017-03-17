@@ -7,18 +7,40 @@
 //
 
 #import "TextViewController.h"
+#import <Common/PublicCommon.h>
 
 @interface TextViewController ()
 
 @end
 
 @implementation TextViewController
+@synthesize navtitle;
+@synthesize txtmemo;
+@synthesize delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor=[UIColor blackColor];
+    navtitle.title=NSLocalizedString(@"remarktitle", nil);
+    
+    UIBarButtonItem *btnsave = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnsave"] style:UIBarButtonItemStylePlain target:self action:@selector(Save)];
+    [navtitle setRightBarButtonItem:btnsave];
+    
+    txtmemo.inputAccessoryView = [PublicCommon getInputToolbar:self sel:@selector(closeinputboard)];
+    
     // Do any additional setup after loading the view.
 }
 
+-(void)Save
+{
+    if (![txtmemo.text isEqualToString:@""])
+        [delegate FinishInput:txtmemo.text];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)closeinputboard
+{
+    [txtmemo resignFirstResponder];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

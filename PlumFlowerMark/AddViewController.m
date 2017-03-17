@@ -98,6 +98,7 @@
     if(audioview)
         [ audioview viewPause];
 }
+
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
     if (effectview){
@@ -299,7 +300,8 @@
                 UIButton *btnadd = [[UIButton alloc] init];
                 btnadd.frame =CGRectMake( [PublicCommon GetALLScreen].size.width /2 - 10, 16, 20, 20);
                 [btnadd setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-
+                [btnadd addTarget:self action:@selector(showInputTextView
+                                                        ) forControlEvents:UIControlEventTouchUpInside];
                 [cell.contentView addSubview:btnadd];
                 lab = [[UILabel alloc] init];
                 lab.frame  = CGRectMake(50, 80-35, [PublicCommon GetALLScreen].size.width-100, 30);
@@ -531,6 +533,20 @@
 #pragma mark picture
 -(void)showSheet
 {
+    if (effectview){
+        [UIView animateWithDuration:0.3 animations:^{
+            effectview.transform = CGAffineTransformMakeTranslation(0, 0);
+        } completion:^(BOOL finished) {
+            [effectview removeFromSuperview];
+            [ezview viewUnload];
+            [ezview removeFromSuperview];
+            ezview=nil;
+            effectview=nil;
+        }];
+    }
+    if(audioview)
+        [ audioview playStop];
+    
     
     __weak __typeof(self) weakself = self;
     UIAlertController *alert  = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"selectpicturetitle", nil) message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -608,21 +624,36 @@
 }
 
 
-
+#pragma mark add text
+-(void)showInputTextView
+{
+    [self performSegueWithIdentifier:@"showText" sender:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+-(void)FinishInput:(NSString *)txt
+{
+    remark = [txt copy];
+    [table reloadData];
+}
+
+
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    TextViewController *txtmemoview;
+    if ([segue.identifier isEqualToString:@"showText"])
+    {
+        txtmemoview = (TextViewController *)[segue destinationViewController];
+        txtmemoview.delegate=self;
+    }
 }
-*/
 
 @end

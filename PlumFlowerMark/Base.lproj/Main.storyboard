@@ -13,7 +13,7 @@
         <scene sceneID="Gea-6d-GhJ">
             <objects>
                 <navigationController id="KRe-hX-3oC" customClass="RootViewController" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4e0-jh-B9m">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4e0-jh-B9m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -143,21 +143,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ru0-4b-mPN">
-                                <rect key="frame" x="16" y="72" width="343" height="220"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pEN-8Z-emj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                                <color key="backgroundColor" white="1" alpha="0.22566295347003154" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="334" id="roi-tG-QDD"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pEN-8Z-emj" firstAttribute="leading" secondItem="oyc-Ej-t3z" secondAttribute="leading" id="0iR-9U-c1j"/>
+                            <constraint firstAttribute="trailing" secondItem="pEN-8Z-emj" secondAttribute="trailing" id="H6Z-Sc-uhC"/>
+                            <constraint firstItem="pEN-8Z-emj" firstAttribute="top" secondItem="oyc-Ej-t3z" secondAttribute="top" id="cy2-kx-3Pp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="q3S-v6-pPa"/>
                     <connections>
                         <outlet property="navtitle" destination="q3S-v6-pPa" id="mtU-yO-Pw1"/>
-                        <outlet property="txtmemo" destination="ru0-4b-mPN" id="TZZ-jo-89o"/>
+                        <outlet property="txtmemo" destination="pEN-8Z-emj" id="G1L-r1-0gN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9b-gS-o5b" userLabel="First Responder" sceneMemberID="firstResponder"/>

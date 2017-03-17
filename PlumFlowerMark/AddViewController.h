@@ -10,8 +10,9 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "EZRecordView.h"
 #import "EZAudioView.h"
+#import "TextViewController.h"
 
-@interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate,RecordDelegate,UIImagePickerControllerDelegate>
+@interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate,RecordDelegate,UIImagePickerControllerDelegate,TextViewInputDelegate>
 {
     BOOL _firstLocationUpdate;
     NSString *locaddress,*lnglat,*altitude,*angleStr;
