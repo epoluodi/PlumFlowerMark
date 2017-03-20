@@ -20,7 +20,7 @@
     NSMutableArray<NSString *>* imgidlist;
     NSString *recordpath,*recorduuid,*remark;
     
-    UILabel *labaddr,*lablnglat,*labaltitude,*labangleStr;
+    UILabel *labaddr,*lablnglat,*labaltitude,*labangleStr,*labremark;
     
     
     //recordview
@@ -30,6 +30,9 @@
     EZAudioView *audioview;
     EZAudioFile *audiofile;
     EZAudioPlot *audioplot;
+    
+    int remarkcellheight;
+    CGRect remarkRect ;
     
     //图片
     UIImagePickerController *pickerview;

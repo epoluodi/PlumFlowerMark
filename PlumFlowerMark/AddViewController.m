@@ -73,7 +73,7 @@
     table.backgroundColor = [UIColor clearColor];
     locaddress = nil;
     
-
+    remarkcellheight= 80;
     // Do any additional setup after loading the view.
 }
 
@@ -221,6 +221,7 @@
                 return 80;
             return 16 + ((imgidlist.count *380) + (imgidlist.count *8) );
         case 4:
+            return (remarkcellheight<80)?80:remarkcellheight;
         case 6:
             return 80;
     }
@@ -291,8 +292,17 @@
         case 4:
    
             if (remark){
-                
-            
+                if (!labremark){
+                    labremark = [[UILabel alloc] init];
+                    labremark.font = [UIFont systemFontOfSize:18];
+    
+                    labremark.textColor = [UIColor whiteColor];
+                    labremark.numberOfLines=0;
+                }
+                labremark.frame = CGRectMake(35, 10, remarkRect.size.width, remarkRect.size.height);
+                labremark.text = remark;
+                cell.selectionStyle = UITableViewCellSelectionStyleGray;
+                [cell.contentView addSubview:labremark];
             }
             else
             {
@@ -315,7 +325,7 @@
             }
    
             line = [[UIView alloc] init];
-            line.frame= CGRectMake(30, 79, [PublicCommon GetALLScreen].size.width-60, 1);
+            line.frame= CGRectMake(30, (remarkcellheight<80)?80:remarkcellheight-1, [PublicCommon GetALLScreen].size.width-60, 1);
             line.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
             [cell.contentView addSubview:line];
             break;
@@ -417,13 +427,17 @@
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
+        case 4:
+            if (remark)
+                return   UITableViewCellEditingStyleDelete;
+            break;
         case 6:
-            return   UITableViewCellEditingStyleDelete;
-            
-        default:
-            return UITableViewCellEditingStyleNone;
-    }
+            if (recordpath)
+                return   UITableViewCellEditingStyleDelete;
+            break;
 
+    }
+    return UITableViewCellEditingStyleNone;
 }
 
 
@@ -440,20 +454,32 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
   
-    if (recordpath)
-    {
-        if (audioview)
-        {
-            [audioview playStop];
-            [audioview viewPause];
-            [audioview removeFromSuperview];
-            audioview =nil;
-            
-        }
-        recordpath = nil;
-        recorduuid = nil;
-        [tableView reloadData];
+    switch (indexPath.row) {
+        case 4:
+            remark = nil;
+            [labremark removeFromSuperview];
+            labremark = nil;
+            [table reloadData];
+            break;
+        case 6:
+            if (recordpath)
+            {
+                if (audioview)
+                {
+                    [audioview playStop];
+                    [audioview viewPause];
+                    [audioview removeFromSuperview];
+                    audioview =nil;
+                    
+                }
+                recordpath = nil;
+                recorduuid = nil;
+                [tableView reloadData];
+            }
+            break;
+
     }
+
     
     
 
@@ -639,7 +665,11 @@
 -(void)FinishInput:(NSString *)txt
 {
     remark = [txt copy];
+    remarkRect = [remark boundingRectWithSize:CGSizeMake([PublicCommon GetALLScreen].size.width-70, 3000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18]} context:nil];
+    remarkcellheight =remarkRect.size.height+20;
+    [table beginUpdates];
     [table reloadData];
+    [table endUpdates];
 }
 
 
