@@ -27,7 +27,7 @@
     [navtitle setRightBarButtonItem:btnsave];
     
     txtmemo.inputAccessoryView = [PublicCommon getInputToolbar:self sel:@selector(closeinputboard)];
-    
+    txtmemo.text = _string;
     // Do any additional setup after loading the view.
 }
 
