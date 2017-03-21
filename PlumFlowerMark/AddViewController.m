@@ -66,7 +66,7 @@
         mapview.myLocationEnabled = YES;
     });
     
-    rows=7;
+    rows=8;
     
     table.delegate=self;
     table.dataSource=self;
@@ -215,14 +215,16 @@
         case 2:
         case 3:
             return 60;
+        case 4:
+            return 80;
 
         case 5:
+            return (remarkcellheight<80)?80:remarkcellheight;
+        case 6:
             if (imgidlist.count ==0)
                 return 80;
             return 16 + ((imgidlist.count *380) + (imgidlist.count *8) );
-        case 4:
-            return (remarkcellheight<80)?80:remarkcellheight;
-        case 6:
+        case 7:
             return 80;
     }
     return 0;
@@ -290,6 +292,37 @@
             [cell.contentView addSubview:line];
             break;
         case 4:
+            
+            if (remark){
+
+            }
+            else
+            {
+                
+                UIButton *btnadd = [[UIButton alloc] init];
+                btnadd.frame =CGRectMake( [PublicCommon GetALLScreen].size.width /2 - 10, 16, 20, 20);
+                [btnadd setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+                [btnadd addTarget:self action:@selector(showInputTextView
+                                                        ) forControlEvents:UIControlEventTouchUpInside];
+                [cell.contentView addSubview:btnadd];
+                lab = [[UILabel alloc] init];
+                lab.frame  = CGRectMake(50, 80-35, [PublicCommon GetALLScreen].size.width-100, 30);
+                lab.textAlignment= NSTextAlignmentCenter;
+                lab.numberOfLines=2;
+                
+                lab.lineBreakMode = NSLineBreakByTruncatingTail;
+                lab.text=NSLocalizedString(@"grouptype", nil);
+                lab.textColor= [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+                [cell.contentView addSubview:lab];
+            }
+            
+            line = [[UIView alloc] init];
+            line.frame= CGRectMake(30, (remarkcellheight<80)?80:remarkcellheight-1, [PublicCommon GetALLScreen].size.width-60, 1);
+            line.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
+            [cell.contentView addSubview:line];
+            break;
+
+        case 5:
    
             if (remark){
                 if (!labremark){
@@ -329,15 +362,12 @@
             line.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
             [cell.contentView addSubview:line];
             break;
-        case 5:
-            
+        case 6:
             _height=79;
             if (imgidlist.count > 0){
                 int index=0;
                 for (NSString *filepath in imgidlist) {
-            
                     UIButton *btndeleteimg= [[UIButton alloc] init];
-         
                     UIImageView *imgview = [[UIImageView alloc] init];
                     imgview.frame = CGRectMake(35, 8 + ((index *380) + (index *8) ), [PublicCommon GetALLScreen].size.width-70, 380);
                     NSData *jpg = [NSData dataWithContentsOfFile:filepath];
@@ -345,8 +375,6 @@
                     imgview.contentMode = UIViewContentModeScaleAspectFit;
                     [cell.contentView addSubview:imgview];
                     imgview.clipsToBounds=YES;
-                  
-                    
                     btndeleteimg.frame = CGRectMake(imgview.frame.size.width/2 -20, imgview.frame.size.height-40 , 40, 40);
                     btndeleteimg.alpha=0.6f;
                     btndeleteimg.userInteractionEnabled=YES;
@@ -356,15 +384,11 @@
                     [btndeleteimg setImage: [UIImage imageNamed:@"deletephoto"] forState:UIControlStateNormal];
                     [imgview addSubview:btndeleteimg];
                     index++;
-           
                 }
-                
                 _height = imgidlist.count *380+ (index *8)  +16 -1;
-                
             }
             else
             {
-                
                 UIButton *btnadd = [[UIButton alloc] init];
                 btnadd.frame =CGRectMake( [PublicCommon GetALLScreen].size.width /2 - 10, 16, 20, 20);
                 [btnadd setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
@@ -375,26 +399,23 @@
                 lab.frame  = CGRectMake(50, 80-35, [PublicCommon GetALLScreen].size.width-100, 30);
                 lab.textAlignment= NSTextAlignmentCenter;
                 lab.numberOfLines=2;
-                
                 lab.lineBreakMode = NSLineBreakByTruncatingTail;
                 lab.text=NSLocalizedString(@"nojpg", nil);
                 lab.textColor= [[UIColor whiteColor] colorWithAlphaComponent:0.6];
                 [cell.contentView addSubview:lab];
             }
-     
             line = [[UIView alloc] init];
             line.frame= CGRectMake(30, _height, [PublicCommon GetALLScreen].size.width-60, 1);
             line.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
             [cell.contentView addSubview:line];
             break;
 
-        case 6:
+        case 7:
       
             if (recordpath){
                 if (!audioview)
                 {
                     audioview = [[EZAudioView alloc] initAudioView:CGRectMake(0, 0, [PublicCommon GetALLScreen].size.width, 80)];
-                    
                 }
                 [audioview updateRecordInfo:recorduuid];
                 [cell.contentView addSubview:audioview];
@@ -410,13 +431,11 @@
                 lab.frame  = CGRectMake(50, 80-35, [PublicCommon GetALLScreen].size.width-100, 30);
                 lab.textAlignment= NSTextAlignmentCenter;
                 lab.numberOfLines=1;
-         
                 lab.lineBreakMode = NSLineBreakByTruncatingTail;
                 lab.text=NSLocalizedString(@"noaudio", nil);
                 lab.textColor= [[UIColor whiteColor] colorWithAlphaComponent:0.6];
             }
             [cell.contentView addSubview:lab];
-
             break;
     }
     
@@ -427,11 +446,11 @@
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
-        case 4:
+        case 5:
             if (remark)
                 return   UITableViewCellEditingStyleDelete;
             break;
-        case 6:
+        case 7:
             if (recordpath)
                 return   UITableViewCellEditingStyleDelete;
             break;
@@ -441,6 +460,19 @@
 }
 
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 5:
+            if (remark)
+            {
+                [self showInputTextView];
+            }
+            break;
+            
+
+    }
+}
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return @"删除";
@@ -455,26 +487,28 @@
 {
   
     switch (indexPath.row) {
-        case 4:
+        case 5:
             remark = nil;
             [labremark removeFromSuperview];
             labremark = nil;
+            [table beginUpdates];
             [table reloadData];
+            [table endUpdates];
             break;
-        case 6:
+        case 7:
             if (recordpath)
             {
                 if (audioview)
                 {
-                    [audioview playStop];
                     [audioview viewPause];
                     [audioview removeFromSuperview];
                     audioview =nil;
-                    
                 }
                 recordpath = nil;
                 recorduuid = nil;
-                [tableView reloadData];
+                [table beginUpdates];
+                [table reloadData];
+                [table endUpdates];
             }
             break;
 
@@ -682,6 +716,7 @@
     if ([segue.identifier isEqualToString:@"showText"])
     {
         txtmemoview = (TextViewController *)[segue destinationViewController];
+        txtmemoview.string = remark;
         txtmemoview.delegate=self;
     }
 }

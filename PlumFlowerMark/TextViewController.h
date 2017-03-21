@@ -20,4 +20,5 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navtitle;
 @property (weak, nonatomic) IBOutlet UITextView *txtmemo;
 @property (weak,nonatomic) NSObject<TextViewInputDelegate> *delegate;
+@property (copy,nonatomic)NSString *string;
 @end

@@ -19,6 +19,8 @@
   
     NSMutableArray<NSString *>* imgidlist;
     NSString *recordpath,*recorduuid,*remark;
+    NSString *groupid,*groupname;
+    
     
     UILabel *labaddr,*lablnglat,*labaltitude,*labangleStr,*labremark;
     
