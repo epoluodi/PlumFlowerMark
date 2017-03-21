@@ -11,6 +11,8 @@
 		5C2618D51E73B3CC00507762 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C2618D41E73B3CC00507762 /* stop.png */; };
 		5C2618D81E73B8FB00507762 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C2618D71E73B8FB00507762 /* pause.png */; };
 		5C2618DA1E742ACF00507762 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C2618D91E742ACF00507762 /* add.png */; };
+		5C52E2731E814CD300D56A07 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C52E2701E814CD300D56A07 /* AddViewController.m */; };
+		5C52E2741E814CD300D56A07 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C52E2721E814CD300D56A07 /* TextViewController.m */; };
 		5C7950921E6A8F70007D0D78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7950911E6A8F70007D0D78 /* main.m */; };
 		5C7950951E6A8F70007D0D78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7950941E6A8F70007D0D78 /* AppDelegate.m */; };
 		5C79509B1E6A8F70007D0D78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C7950991E6A8F70007D0D78 /* Main.storyboard */; };
@@ -125,7 +127,6 @@
 		5CE51DBE1E6C61ED00FFAF2E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CE51DC01E6C61ED00FFAF2E /* InfoPlist.strings */; };
 		5CE51DC41E6C624200FFAF2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CE51DC61E6C624200FFAF2E /* Localizable.strings */; };
 		5CE51DCC1E6C6E7600FFAF2E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DCB1E6C6E7600FFAF2E /* AboutViewController.m */; };
-		5CE51DCF1E6C6F2B00FFAF2E /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DCE1E6C6F2B00FFAF2E /* AddViewController.m */; };
 		B43016B41E723E3A00201489 /* EZAudioiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43016B31E723E3A00201489 /* EZAudioiOS.framework */; };
 		B43016B51E72418800201489 /* EZAudioiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43016B31E723E3A00201489 /* EZAudioiOS.framework */; };
 		B43016B61E72418800201489 /* EZAudioiOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B43016B31E723E3A00201489 /* EZAudioiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -153,7 +154,6 @@
 		B46A58031E728A0D0080B7F7 /* EZRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = B46A58021E728A0D0080B7F7 /* EZRecordView.m */; };
 		B46A58051E728B490080B7F7 /* Btn_record.png in Resources */ = {isa = PBXBuildFile; fileRef = B46A58041E728B490080B7F7 /* Btn_record.png */; };
 		B46A58091E72A93A0080B7F7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = B46A58081E72A93A0080B7F7 /* play.png */; };
-		B4BEB6B81E77D34500B42DBF /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BEB6B71E77D34500B42DBF /* TextViewController.m */; };
 		B4C838C71E8102DD0065FC66 /* DBmanger.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C838C51E8102DD0065FC66 /* DBmanger.m */; };
 		B4D2CE0E1E768F66002B5CAF /* deletephoto.png in Resources */ = {isa = PBXBuildFile; fileRef = B4D2CE0D1E768F66002B5CAF /* deletephoto.png */; };
 /* End PBXBuildFile section */
@@ -178,6 +178,10 @@
 		5C2618D41E73B3CC00507762 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		5C2618D71E73B8FB00507762 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		5C2618D91E742ACF00507762 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		5C52E26F1E814CD300D56A07 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		5C52E2701E814CD300D56A07 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		5C52E2711E814CD300D56A07 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		5C52E2721E814CD300D56A07 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		5C79508D1E6A8F70007D0D78 /* PlumFlowerMark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlumFlowerMark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7950911E6A8F70007D0D78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5C7950931E6A8F70007D0D78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -306,8 +310,6 @@
 		5CE51DC81E6C685200FFAF2E /* Public.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
 		5CE51DCA1E6C6E7600FFAF2E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		5CE51DCB1E6C6E7600FFAF2E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		5CE51DCD1E6C6F2B00FFAF2E /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
-		5CE51DCE1E6C6F2B00FFAF2E /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		B43016B31E723E3A00201489 /* EZAudioiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EZAudioiOS.framework; sourceTree = "<group>"; };
 		B443F4201E6FDC2A00428A45 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		B443F4211E6FDC2A00428A45 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
@@ -334,8 +336,6 @@
 		B46A58021E728A0D0080B7F7 /* EZRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZRecordView.m; sourceTree = "<group>"; };
 		B46A58041E728B490080B7F7 /* Btn_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Btn_record.png; sourceTree = "<group>"; };
 		B46A58081E72A93A0080B7F7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
-		B4BEB6B61E77D34500B42DBF /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
-		B4BEB6B71E77D34500B42DBF /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		B4C838C51E8102DD0065FC66 /* DBmanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBmanger.m; sourceTree = "<group>"; };
 		B4C838C61E8102DD0065FC66 /* DBmanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBmanger.h; sourceTree = "<group>"; };
 		B4D2CE0D1E768F66002B5CAF /* deletephoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deletephoto.png; sourceTree = "<group>"; };
@@ -372,6 +372,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C52E26E1E814CC600D56A07 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				5C52E26F1E814CD300D56A07 /* AddViewController.h */,
+				5C52E2701E814CD300D56A07 /* AddViewController.m */,
+				5C52E2711E814CD300D56A07 /* TextViewController.h */,
+				5C52E2721E814CD300D56A07 /* TextViewController.m */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
 		5C7950841E6A8F70007D0D78 = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +403,7 @@
 		5C79508F1E6A8F70007D0D78 /* PlumFlowerMark */ = {
 			isa = PBXGroup;
 			children = (
+				5C52E26E1E814CC600D56A07 /* Add */,
 				5CAB4A531E802B67003A8327 /* mark */,
 				B46A57FE1E7289320080B7F7 /* CustomView */,
 				5CB51ACB1E70380B005D3805 /* CommonApi.h */,
@@ -624,17 +636,6 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
-		B4C838C81E8103500065FC66 /* add */ = {
-			isa = PBXGroup;
-			children = (
-				5CE51DCD1E6C6F2B00FFAF2E /* AddViewController.h */,
-				5CE51DCE1E6C6F2B00FFAF2E /* AddViewController.m */,
-				B4BEB6B61E77D34500B42DBF /* TextViewController.h */,
-				B4BEB6B71E77D34500B42DBF /* TextViewController.m */,
-			);
-			name = add;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -821,8 +822,9 @@
 				5C2618D31E73A21600507762 /* EZAudioView.m in Sources */,
 				5CE51DAF1E6C373500FFAF2E /* ListViewController.m in Sources */,
 				5C7950951E6A8F70007D0D78 /* AppDelegate.m in Sources */,
+				5C52E2741E814CD300D56A07 /* TextViewController.m in Sources */,
 				B4C838C71E8102DD0065FC66 /* DBmanger.m in Sources */,
-				B4BEB6B81E77D34500B42DBF /* TextViewController.m in Sources */,
+				5C52E2731E814CD300D56A07 /* AddViewController.m in Sources */,
 				5CE51DCC1E6C6E7600FFAF2E /* AboutViewController.m in Sources */,
 				5C7950921E6A8F70007D0D78 /* main.m in Sources */,
 				5CE51DB21E6C373F00FFAF2E /* MapViewController.m in Sources */,
@@ -831,7 +833,6 @@
 				5CE51DA91E6C36E700FFAF2E /* RootViewController.m in Sources */,
 				5CE51DBB1E6C5B3E00FFAF2E /* BaseViewController.m in Sources */,
 				5CE51DAC1E6C370200FFAF2E /* MainViewController.m in Sources */,
-				5CE51DCF1E6C6F2B00FFAF2E /* AddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
