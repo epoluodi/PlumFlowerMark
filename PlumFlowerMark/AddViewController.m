@@ -388,7 +388,7 @@
                 _height = imgidlist.count *380+ (index *8)  +16 -1;
             }
             else
-            {
+            { 
                 UIButton *btnadd = [[UIButton alloc] init];
                 btnadd.frame =CGRectMake( [PublicCommon GetALLScreen].size.width /2 - 10, 16, 20, 20);
                 [btnadd setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
