@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PlaceInfo" representedClassName="PlaceInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="addr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fx" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="groupid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hb" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="imgs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lng" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mapimg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="marktype" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="marktypeimg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordfile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remark" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PlaceInfo" positionX="-63" positionY="-18" width="128" height="240"/>
+    </elements>
+</model>

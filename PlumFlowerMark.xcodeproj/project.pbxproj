@@ -154,6 +154,7 @@
 		B4BEE4DD1E825B3600C1A324 /* tree6.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BEE4B31E825B3600C1A324 /* tree6.png */; };
 		B4BEE4DE1E825B3600C1A324 /* tree1.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BEE4B41E825B3600C1A324 /* tree1.png */; };
 		B4BEE4E01E825B3C00C1A324 /* bj0.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BEE4DF1E825B3C00C1A324 /* bj0.png */; };
+		B4BEE4E31E82780E00C1A324 /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4BEE4E11E82780E00C1A324 /* db.xcdatamodeld */; };
 		B4C838C71E8102DD0065FC66 /* DBmanger.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C838C51E8102DD0065FC66 /* DBmanger.m */; };
 		B4D2CE0E1E768F66002B5CAF /* deletephoto.png in Resources */ = {isa = PBXBuildFile; fileRef = B4D2CE0D1E768F66002B5CAF /* deletephoto.png */; };
 /* End PBXBuildFile section */
@@ -336,6 +337,7 @@
 		B4BEE4B31E825B3600C1A324 /* tree6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree6.png; sourceTree = "<group>"; };
 		B4BEE4B41E825B3600C1A324 /* tree1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree1.png; sourceTree = "<group>"; };
 		B4BEE4DF1E825B3C00C1A324 /* bj0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bj0.png; sourceTree = "<group>"; };
+		B4BEE4E21E82780E00C1A324 /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
 		B4C838C51E8102DD0065FC66 /* DBmanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBmanger.m; sourceTree = "<group>"; };
 		B4C838C61E8102DD0065FC66 /* DBmanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBmanger.h; sourceTree = "<group>"; };
 		B4D2CE0D1E768F66002B5CAF /* deletephoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deletephoto.png; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 			children = (
 				B4C838C51E8102DD0065FC66 /* DBmanger.m */,
 				B4C838C61E8102DD0065FC66 /* DBmanger.h */,
+				B4BEE4E11E82780E00C1A324 /* db.xcdatamodeld */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				5CE51DA91E6C36E700FFAF2E /* RootViewController.m in Sources */,
 				5CE51DBB1E6C5B3E00FFAF2E /* BaseViewController.m in Sources */,
 				5CE51DAC1E6C370200FFAF2E /* MainViewController.m in Sources */,
+				B4BEE4E31E82780E00C1A324 /* db.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1030,6 +1034,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B4BEE4E11E82780E00C1A324 /* db.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B4BEE4E21E82780E00C1A324 /* db.xcdatamodel */,
+			);
+			currentVersion = B4BEE4E21E82780E00C1A324 /* db.xcdatamodel */;
+			path = db.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5C7950851E6A8F70007D0D78 /* Project object */;
 }

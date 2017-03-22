@@ -56,3 +56,5 @@
 "mark11" = "Hill";
 "mark12" = "Shopping";
 "mark13" = "Tree";
+
+"saveinfo" = "Confirm save current information?";

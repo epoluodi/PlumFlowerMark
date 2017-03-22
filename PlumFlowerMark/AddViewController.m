@@ -48,7 +48,7 @@
     table.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 
-    btn1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnsave"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    btn1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnsave"] style:UIBarButtonItemStylePlain target:self action:@selector(SaveInfo)];
     btn2 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btncamera"] style:UIBarButtonItemStylePlain target:self action:@selector(showSheet)];
     btn3 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnrecord"] style:UIBarButtonItemStylePlain target:self action:@selector(clickRecord)];
     [navtitle setRightBarButtonItems:@[btn1,btn2,btn3]];
@@ -845,6 +845,42 @@
     if (component==1)
         return 60;
     return 40;
+}
+
+
+
+
+
+-(void)SaveInfo
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"saveinfo", nil) message:@"\n\n\n\n\n\n" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"btncancel", nil) style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:NSLocalizedString(@"btnok", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    UIImageView *imgview = [[UIImageView alloc] init];
+    imgview.image = [self SnapShotMap];
+    imgview.frame = CGRectMake(8, 50, alert.view.frame.size.width /2, 125);
+    [alert.view addSubview:imgview];
+    
+    [alert addAction:action];
+    [alert addAction:action1];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+//地图快照
+-(UIImage *)SnapShotMap
+{
+    mapview.settings.myLocationButton=NO;
+
+    UIGraphicsBeginImageContextWithOptions(mapview.bounds.size, YES, 0);
+    [mapview drawViewHierarchyInRect:mapview.bounds afterScreenUpdates:YES];
+    UIImage *mapSnapShot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    mapview.settings.myLocationButton=YES;
+    return mapSnapShot;
 }
 
 
