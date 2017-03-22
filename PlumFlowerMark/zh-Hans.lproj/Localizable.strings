@@ -14,7 +14,7 @@
 "AboutTitle"="关于";
 "AddTitle"="添加标记";
 "btncancel"="取消";
-
+"btnok"="确定";
 
 "selectpicturetitle"="选择图片";
 "picturebtn1"="拍照";
@@ -38,3 +38,23 @@
 "noremark"="没有说明";
 "remarktitle"="说明";
 "grouptype"="类别";
+"typealerttitle"="设定目标类型";
+
+"mark0" = "其它标记";
+"mark1" = "便利店";
+"mark2" = "餐厅";
+"mark3" = "公交站";
+"mark4" = "海滩";
+"mark5" = "机场";
+"mark6" = "酒店";
+"mark7" = "加油站";
+"mark8" = "码头";
+"mark9" = "停车场";
+"mark10" = "潜水";
+"mark11" = "山地";
+"mark12" = "购物";
+"mark13" = "森林";
+
+
+
+

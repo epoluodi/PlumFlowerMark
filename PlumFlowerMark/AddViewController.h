@@ -11,8 +11,9 @@
 #import "EZRecordView.h"
 #import "EZAudioView.h"
 #import "TextViewController.h"
+#import "CommonApi.h"
 
-@interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate,RecordDelegate,UIImagePickerControllerDelegate,TextViewInputDelegate>
+@interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate,RecordDelegate,UIImagePickerControllerDelegate,TextViewInputDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 {
     BOOL _firstLocationUpdate;
     NSString *locaddress,*lnglat,*altitude,*angleStr;
@@ -20,7 +21,9 @@
     NSMutableArray<NSString *>* imgidlist;
     NSString *recordpath,*recorduuid,*remark;
     NSString *groupid,*groupname;
-    
+    MarkTypeEnum marktype;
+    NSString *selectmarktype;
+    NSString *imgmarkstr;
     
     UILabel *labaddr,*lablnglat,*labaltitude,*labangleStr,*labremark;
     

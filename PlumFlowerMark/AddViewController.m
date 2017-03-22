@@ -36,7 +36,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
     navtitle.title = NSLocalizedString(@"AddTitle", nil);
-    
+    marktype = MARK;
     imgidlist = [[NSMutableArray alloc] init];
     
     labaddr = [[UILabel alloc] init];
@@ -293,8 +293,15 @@
             break;
         case 4:
             
-            if (remark){
+            if (selectmarktype){
 
+                UIImageView *imgview=  [[UIImageView alloc] init];
+                imgview.image= [UIImage imageNamed:selectmarktype];
+                imgview.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.2];
+                imgview.contentMode = UIViewContentModeScaleAspectFill;
+                imgview.frame= CGRectMake([PublicCommon GetALLScreen].size.width /2 -30, 10, 60, 60);
+                [cell.contentView addSubview:imgview];
+            
             }
             else
             {
@@ -302,7 +309,7 @@
                 UIButton *btnadd = [[UIButton alloc] init];
                 btnadd.frame =CGRectMake( [PublicCommon GetALLScreen].size.width /2 - 10, 16, 20, 20);
                 [btnadd setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-                [btnadd addTarget:self action:@selector(showInputTextView
+                [btnadd addTarget:self action:@selector(showSheetForType
                                                         ) forControlEvents:UIControlEventTouchUpInside];
                 [cell.contentView addSubview:btnadd];
                 lab = [[UILabel alloc] init];
@@ -446,6 +453,10 @@
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
+        case 4:
+            if (selectmarktype)
+                return UITableViewCellEditingStyleDelete;
+            break;
         case 5:
             if (remark)
                 return   UITableViewCellEditingStyleDelete;
@@ -463,14 +474,18 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
+        case 4:
+            if (selectmarktype)
+            {
+                [self showSheetForType];
+            }
+            break;
         case 5:
             if (remark)
             {
                 [self showInputTextView];
             }
             break;
-            
-
     }
 }
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -487,6 +502,12 @@
 {
   
     switch (indexPath.row) {
+        case 4:
+            selectmarktype=nil;
+            [table beginUpdates];
+            [table reloadData];
+            [table endUpdates];
+            break;
         case 5:
             remark = nil;
             [labremark removeFromSuperview];
@@ -511,13 +532,7 @@
                 [table endUpdates];
             }
             break;
-
     }
-
-    
-    
-
-    
 }
 
 
@@ -707,6 +722,130 @@
 }
 
 
+
+
+#pragma mark showsheet
+-(void)showSheetForType
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"typealerttitle", nil) message:@"\n\n\n\n\n\n\n\n\n\n" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+
+    UIPickerView *pickmark = [[UIPickerView alloc] init];
+    imgmarkstr = @"bj";
+    selectmarktype = @"bj0";
+    pickmark.frame = CGRectMake(8, 50, alert.view.frame.size.width-36 , 200);
+    pickmark.delegate=self;
+    pickmark.dataSource=self;
+    [alert.view addSubview:pickmark];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"btncancel", nil) style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:NSLocalizedString(@"btnok", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [table beginUpdates];
+        [table reloadData];
+        [table endUpdates];
+    }];
+    
+    [alert addAction:action1];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if (component==0)
+        return 14;
+    return 7;
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 2;
+}
+
+
+-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    
+    if (component==0){
+        UILabel *labtitle = [[UILabel alloc] init];
+        NSString *marktitle = [NSString stringWithFormat:@"mark%d",row];
+        labtitle.text=NSLocalizedString(marktitle, nil);
+        labtitle.textAlignment = NSTextAlignmentCenter;
+        labtitle.font=[UIFont systemFontOfSize:18];
+        return labtitle;
+    }
+    if (component==1){
+        UIImageView *img= [[UIImageView alloc] init];
+        img.image= [UIImage imageNamed:[NSString stringWithFormat:@"%@%d",imgmarkstr,row]];
+        img.contentMode = UIViewContentModeScaleAspectFit;
+        return img;
+    }
+    return view;
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if (component==0)
+    {
+        switch (row) {
+            case MARK:
+                imgmarkstr = @"bj";
+                break;
+            case Store:
+                imgmarkstr = @"bld";
+                break;
+            case Restaurant:
+                imgmarkstr = @"ct";
+                break;
+            case BUS:
+                imgmarkstr = @"gj";
+                break;
+            case Beach:
+                imgmarkstr = @"ht";
+                break;
+            case AIRPORT:
+                imgmarkstr = @"jc";
+                break;
+            case Hotel:
+                imgmarkstr = @"jd";
+                break;
+            case GAS:
+                imgmarkstr = @"jyz";
+                break;
+            case Wharf:
+                imgmarkstr = @"mt";
+                break;
+            case Park:
+                imgmarkstr = @"p";
+                break;
+            case Diving:
+                imgmarkstr = @"qs";
+                break;
+            case Hill:
+                imgmarkstr = @"s";
+                break;
+            case Shopping:
+                imgmarkstr = @"sc";
+                break;
+            case Tree:
+                imgmarkstr = @"tree";
+                break;
+        }
+        [pickerView reloadComponent:1];
+    }
+    if (component==1)
+    {
+        marktype = row;
+        selectmarktype =[NSString stringWithFormat:@"%@%d",imgmarkstr,row];
+    }
+}
+-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    if (component==1)
+        return 60;
+    return 40;
+}
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

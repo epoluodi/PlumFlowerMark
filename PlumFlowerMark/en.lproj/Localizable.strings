@@ -15,6 +15,7 @@
 "AboutTitle"="About Info";
 "AddTitle"="Add Mark";
 "btncancel"="Cancel";
+"btnok"="OK";
 
 "selectpicturetitle"="Select Picture";
 "picturebtn1"="Camera";
@@ -39,3 +40,19 @@
 "noremark"="No ReMark";
 "remarktitle"="Enter Note";
 "grouptype"="Type";
+"typealerttitle"="Set Target Type";
+
+"mark0" = "Other Mark";
+"mark1" = "Convenience Store";
+"mark2" = "Restaurant";
+"mark3" = "Bus stop";
+"mark4" = "Beach";
+"mark5" = "Air Port";
+"mark6" = "Hotel";
+"mark7" = "Gas station";
+"mark8" = "Wharf";
+"mark9" = "Parking";
+"mark10" = "Diving";
+"mark11" = "Hill";
+"mark12" = "Shopping";
+"mark13" = "Tree";

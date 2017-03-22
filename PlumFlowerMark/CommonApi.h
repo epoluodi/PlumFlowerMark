@@ -17,6 +17,23 @@ typedef enum : NSUInteger {
 
 
 
+typedef enum : NSUInteger {
+    MARK,
+    Store,
+    Restaurant,
+    BUS,
+    Beach,
+    AIRPORT,
+    Hotel,
+    GAS,
+    Wharf,
+    Park,
+    Diving,
+    Hill,
+    Shopping,
+    Tree,
+} MarkTypeEnum;
+
 @interface CommonApi : NSObject
 
 
