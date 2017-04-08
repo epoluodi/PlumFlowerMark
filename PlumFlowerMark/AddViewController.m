@@ -678,7 +678,7 @@
     NSString *_filepath = [[FileCommon getCacheDirectory] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",_uuid]];
     [photo writeToFile:_filepath atomically:YES];
     
-    [imgidlist addObject:_filepath];
+    [imgidlist addObject:_uuid];
     
     [table beginUpdates];
     [table reloadData];
@@ -853,18 +853,72 @@
 
 -(void)SaveInfo
 {
+    
+    __weak __typeof(self) weakself = self;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"saveinfo", nil) message:@"\n\n\n\n\n\n" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"btncancel", nil) style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:NSLocalizedString(@"btnok", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
+        PlaceInfo *_placeinfo =  [[DBmanger getIntance] getNewPlaceInfo];
+        if (!locaddress)
+            _placeinfo.addr = @"-";
+        else
+            _placeinfo.addr = locaddress;
+        _placeinfo.dt = [NSDate date];
+        _placeinfo.fx = myloc.course;
+        _placeinfo.groupid = 0;
+        _placeinfo.hb=myloc.altitude;
+        _placeinfo.lat = myloc.coordinate.latitude;
+        _placeinfo.lng = myloc.coordinate.longitude;
+        
+        if (imgidlist.count==0)
+            _placeinfo.imgs = @"0";
+        else
+            _placeinfo.imgs = [imgidlist componentsJoinedByString:@","];
+        
+        if (!mapimguuid)
+            _placeinfo.mapimg = @"";
+        else
+            _placeinfo.mapimg = mapimguuid;
+        
+        _placeinfo.marktype = (int)marktype;
+        if (!selectmarktype)
+            _placeinfo.marktypeimg = @"";
+        else
+            _placeinfo.marktypeimg = selectmarktype;
+        
+        if (!recorduuid)
+            _placeinfo.recordfile=@"";
+        else
+            _placeinfo.recordfile = recorduuid;
+        
+        if (!remark)
+            _placeinfo.remark=@"";
+        else
+            _placeinfo.remark=remark;
+        
+        [[DBmanger getIntance] Save];
+        
+        [weakself.navigationController popViewControllerAnimated:YES];
     }];
     
     UIImageView *imgview = [[UIImageView alloc] init];
     imgview.image = [self SnapShotMap];
-    imgview.frame = CGRectMake(8, 50, alert.view.frame.size.width /2, 125);
-    [alert.view addSubview:imgview];
     
+    NSData *mapimgdata =UIImageJPEGRepresentation(imgview.image, 0);
+
+  
+    mapimguuid = [[NSUUID UUID] UUIDString];
+    NSString *_filepath = [[FileCommon getCacheDirectory] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",mapimguuid]];
+    [mapimgdata writeToFile:_filepath atomically:YES];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        imgview.frame = CGRectMake(8, 50, alert.view.frame.size.width-16, 125);
+        [alert.view addSubview:imgview];
+        
+    });
+
     [alert addAction:action];
     [alert addAction:action1];
     [self presentViewController:alert animated:YES completion:nil];

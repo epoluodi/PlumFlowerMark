@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
+#import "DBmanger.h"
 
 @interface BaseViewController : UIViewController
 {

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "PlaceInfo+CoreDataClass.h"
 
 
 @class ChatMessage;
@@ -26,4 +27,7 @@
 +(instancetype)getIntance;
 -(void)Save;//更新一次操作
 
+
+-(PlaceInfo *)getNewPlaceInfo;//得到一个新的地点对象
+-(NSArray *)getPlaceInfoArry;
 @end

@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-@interface ListViewController : BaseViewController
+@interface ListViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>
 {
     UIBarButtonItem *leftbtn,*rightbtn;
+    NSArray *listarry;
 }
 @property (weak, nonatomic) IBOutlet UITabBarItem *baritem;
 @property (weak, nonatomic) IBOutlet UITableView *table;

@@ -12,6 +12,7 @@
 #import "EZAudioView.h"
 #import "TextViewController.h"
 #import "CommonApi.h"
+#import "DBmanger.h"
 
 @interface AddViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,GMSMapViewDelegate,RecordDelegate,UIImagePickerControllerDelegate,TextViewInputDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 {
@@ -24,7 +25,7 @@
     MarkTypeEnum marktype;
     NSString *selectmarktype;
     NSString *imgmarkstr;
-    
+    NSString *mapimguuid;
     UILabel *labaddr,*lablnglat,*labaltitude,*labangleStr,*labremark;
     
     

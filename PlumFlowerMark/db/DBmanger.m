@@ -67,7 +67,19 @@ static DBmanger *_db;
     [mangedcontext save:nil];
 }
 
+-(PlaceInfo *)getNewPlaceInfo
+{
+    PlaceInfo * _placeinfo = [NSEntityDescription insertNewObjectForEntityForName:@"PlaceInfo" inManagedObjectContext:mangedcontext];
+    return _placeinfo;
+}
 
 
+-(NSArray *)getPlaceInfoArry
+{
+    NSFetchRequest *fetch=[NSFetchRequest fetchRequestWithEntityName:@"PlaceInfo"];
+    NSArray *arr=[mangedcontext executeFetchRequest:fetch error:nil];
+    return arr;
+    
+}
 @end
 

@@ -74,6 +74,8 @@
 		5CAB4AEC1E802B67003A8327 /* jyz6.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CAB4A8A1E802B67003A8327 /* jyz6.png */; };
 		5CAB4AED1E802B67003A8327 /* jyz1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CAB4A8B1E802B67003A8327 /* jyz1.png */; };
 		5CB51ACD1E70380B005D3805 /* CommonApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB51ACC1E70380B005D3805 /* CommonApi.m */; };
+		5CC5D4F41E9783A000D7D96D /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC5D4F31E9783A000D7D96D /* ListCell.xib */; };
+		5CC5D4F71E978CAA00D7D96D /* listCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5D4F61E978CAA00D7D96D /* listCell.m */; };
 		5CE51DA91E6C36E700FFAF2E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DA81E6C36E700FFAF2E /* RootViewController.m */; };
 		5CE51DAC1E6C370200FFAF2E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DAB1E6C370200FFAF2E /* MainViewController.m */; };
 		5CE51DAF1E6C373500FFAF2E /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DAE1E6C373500FFAF2E /* ListViewController.m */; };
@@ -85,7 +87,6 @@
 		5CE51DC41E6C624200FFAF2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CE51DC61E6C624200FFAF2E /* Localizable.strings */; };
 		5CE51DCC1E6C6E7600FFAF2E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE51DCB1E6C6E7600FFAF2E /* AboutViewController.m */; };
 		B43016B41E723E3A00201489 /* EZAudioiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43016B31E723E3A00201489 /* EZAudioiOS.framework */; };
-		B43016B51E72418800201489 /* EZAudioiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43016B31E723E3A00201489 /* EZAudioiOS.framework */; };
 		B43016B61E72418800201489 /* EZAudioiOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B43016B31E723E3A00201489 /* EZAudioiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B443F4241E6FDC2A00428A45 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B443F4201E6FDC2A00428A45 /* GoogleMaps.bundle */; };
 		B443F4251E6FDC2A00428A45 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B443F4211E6FDC2A00428A45 /* GoogleMaps.framework */; };
@@ -250,6 +251,13 @@
 		5CAB4A8B1E802B67003A8327 /* jyz1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jyz1.png; sourceTree = "<group>"; };
 		5CB51ACB1E70380B005D3805 /* CommonApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonApi.h; sourceTree = "<group>"; };
 		5CB51ACC1E70380B005D3805 /* CommonApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonApi.m; sourceTree = "<group>"; };
+		5CC5D4EC1E97683500D7D96D /* PlaceInfo+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PlaceInfo+CoreDataClass.h"; sourceTree = "<group>"; };
+		5CC5D4ED1E97683500D7D96D /* PlaceInfo+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PlaceInfo+CoreDataClass.m"; sourceTree = "<group>"; };
+		5CC5D4EE1E97683500D7D96D /* PlaceInfo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PlaceInfo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5CC5D4EF1E97683500D7D96D /* PlaceInfo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PlaceInfo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5CC5D4F31E9783A000D7D96D /* ListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		5CC5D4F51E978CAA00D7D96D /* listCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = listCell.h; sourceTree = "<group>"; };
+		5CC5D4F61E978CAA00D7D96D /* listCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = listCell.m; sourceTree = "<group>"; };
 		5CE51DA71E6C36E700FFAF2E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5CE51DA81E6C36E700FFAF2E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		5CE51DAA1E6C370200FFAF2E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -356,7 +364,6 @@
 				B443F43C1E6FE11000428A45 /* CoreData.framework in Frameworks */,
 				B443F43A1E6FE10700428A45 /* CoreLocation.framework in Frameworks */,
 				B443F4381E6FE0FC00428A45 /* GLKit.framework in Frameworks */,
-				B43016B51E72418800201489 /* EZAudioiOS.framework in Frameworks */,
 				B443F4361E6FE0F300428A45 /* ImageIO.framework in Frameworks */,
 				B443F4341E6FE0E900428A45 /* OpenGLES.framework in Frameworks */,
 				B443F4321E6FE0E000428A45 /* QuartzCore.framework in Frameworks */,
@@ -405,6 +412,7 @@
 		5C79508F1E6A8F70007D0D78 /* PlumFlowerMark */ = {
 			isa = PBXGroup;
 			children = (
+				5CC5D4F21E97838B00D7D96D /* Cell */,
 				5C52E26E1E814CC600D56A07 /* Add */,
 				5CAB4A531E802B67003A8327 /* mark */,
 				B46A57FE1E7289320080B7F7 /* CustomView */,
@@ -552,6 +560,16 @@
 			path = mark;
 			sourceTree = "<group>";
 		};
+		5CC5D4F21E97838B00D7D96D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5CC5D4F31E9783A000D7D96D /* ListCell.xib */,
+				5CC5D4F51E978CAA00D7D96D /* listCell.h */,
+				5CC5D4F61E978CAA00D7D96D /* listCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		5CE51DB41E6C55BA00FFAF2E /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,6 +583,10 @@
 		5CE51DC91E6C6DCA00FFAF2E /* db */ = {
 			isa = PBXGroup;
 			children = (
+				5CC5D4EC1E97683500D7D96D /* PlaceInfo+CoreDataClass.h */,
+				5CC5D4ED1E97683500D7D96D /* PlaceInfo+CoreDataClass.m */,
+				5CC5D4EE1E97683500D7D96D /* PlaceInfo+CoreDataProperties.h */,
+				5CC5D4EF1E97683500D7D96D /* PlaceInfo+CoreDataProperties.m */,
 				B4C838C51E8102DD0065FC66 /* DBmanger.m */,
 				B4C838C61E8102DD0065FC66 /* DBmanger.h */,
 				B4BEE4E11E82780E00C1A324 /* db.xcdatamodeld */,
@@ -666,7 +688,7 @@
 		5C7950851E6A8F70007D0D78 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "杨晓光";
 				TargetAttributes = {
 					5C79508C1E6A8F70007D0D78 = {
@@ -712,6 +734,7 @@
 				B4BEE4C51E825B3600C1A324 /* qs3.png in Resources */,
 				5CAB4ADF1E802B67003A8327 /* jc1.png in Resources */,
 				5CAB4ADC1E802B67003A8327 /* jc4.png in Resources */,
+				5CC5D4F41E9783A000D7D96D /* ListCell.xib in Resources */,
 				5CAB4AC51E802B67003A8327 /* ct2.png in Resources */,
 				B4BEE4C71E825B3600C1A324 /* qs5.png in Resources */,
 				B4BEE4DD1E825B3600C1A324 /* tree6.png in Resources */,
@@ -823,6 +846,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C2618D31E73A21600507762 /* EZAudioView.m in Sources */,
+				5CC5D4F71E978CAA00D7D96D /* listCell.m in Sources */,
 				5CE51DAF1E6C373500FFAF2E /* ListViewController.m in Sources */,
 				5C7950951E6A8F70007D0D78 /* AppDelegate.m in Sources */,
 				5C52E2741E814CD300D56A07 /* TextViewController.m in Sources */,
@@ -926,6 +950,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -967,6 +992,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "CommonApi.h"
+#import "DBmanger.h"
 
 @interface AppDelegate ()
 
@@ -34,6 +35,7 @@
 
     [GMSServices provideAPIKey:@"AIzaSyB_HOkwefSJGtkxinqkKdAQc_hjAQDc-Ts"];//key
     [GMSServices sharedServices];
+    [DBmanger getIntance];
     return YES;
 }
 
